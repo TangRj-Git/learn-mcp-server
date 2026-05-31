@@ -68,9 +68,15 @@ uv run python examples\client_test.py
 
 ## Inspector 调试
 
+Windows 下建议使用正斜杠绝对路径，并显式指定 `server.py` 里的 `mcp` 对象：
+
 ```powershell
-uv run fastmcp dev inspector src\learn_mcp_server\server.py
+uv run fastmcp dev inspector --no-reload E:/SoftwareProject/learn-mcp-server/src/learn_mcp_server/server.py:mcp
 ```
+
+如果换成你自己的项目路径，也保持 `/`，不要写成 `E:\...`。反斜杠路径在 Inspector 的 URL 转换过程中可能被错误解析。
+
+Inspector 连接成功后，可以在页面里点击 `List Resources`、`List Templates`、`Tools`、`Prompts` 查看当前 MCP Server 暴露的能力。
 
 ## stdio 配置
 
@@ -146,7 +152,7 @@ Remove-Item Env:\LEARN_MCP_TRANSPORT
 uv sync
 uv run pytest -q
 uv run python examples\client_test.py
-uv run fastmcp dev inspector src\learn_mcp_server\server.py
+uv run fastmcp dev inspector --no-reload E:/SoftwareProject/learn-mcp-server/src/learn_mcp_server/server.py:mcp
 uv build
 ```
 

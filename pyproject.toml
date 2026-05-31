@@ -8,6 +8,18 @@ version = "0.1.0"
 description = "A learning MCP server built with FastMCP."
 readme = "README.md"
 requires-python = ">=3.10"
+authors = [
+    { name = "TangRuoJie" }
+]
+license = "MIT"
+keywords = ["mcp", "fastmcp", "model-context-protocol", "learning"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 dependencies = [
     "fastmcp",
 ]
@@ -30,3 +42,8 @@ filterwarnings = [
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/learn_mcp_server"]
+
+[project.urls]
+Homepage = "https://github.com/TangRj-Git/learn-mcp-server"
+Repository = "https://github.com/TangRj-Git/learn-mcp-server"
+Issues = "https://github.com/TangRj-Git/learn-mcp-server/issues"

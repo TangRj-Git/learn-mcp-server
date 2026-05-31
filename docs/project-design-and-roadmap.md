@@ -1077,10 +1077,14 @@ FastMCP Client 集成测试
 
 ## 使用 Inspector 调试
 
+Windows 下建议使用正斜杠绝对路径，并显式指定 `server.py` 里的 `mcp` 对象。
+
 ```powershell
 cd E:\SoftwareProject\learn-mcp-server
-uv run fastmcp dev inspector src\learn_mcp_server\server.py
+uv run fastmcp dev inspector --no-reload E:/SoftwareProject/learn-mcp-server/src/learn_mcp_server/server.py:mcp
 ```
+
+如果换成自己的项目路径，也保持 `/`，不要写成 `E:\...`。反斜杠路径在 Inspector 的 URL 转换过程中可能被错误解析。
 
 ## 本地客户端测试
 
