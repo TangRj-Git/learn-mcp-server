@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "learn-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "learn-mcp-server==0.1.0",
+        "learn-mcp-server"
+      ]
+    }
+  }
+}

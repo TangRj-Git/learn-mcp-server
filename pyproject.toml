@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "learn-mcp-server"
+version = "0.1.0"
+description = "A learning MCP server built with FastMCP."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp",
+]
+
+[project.scripts]
+learn-mcp-server = "learn_mcp_server.server:main"
+
+[dependency-groups]
+dev = [
+    "pytest",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = [
+    "ignore:SelectableGroups dict interface is deprecated:DeprecationWarning:opentelemetry.*",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/learn_mcp_server"]
