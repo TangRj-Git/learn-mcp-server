@@ -1,0 +1,77 @@
+{
+  "scope": "Recommended APIs verified in memory only; no runtime upgrade",
+  "fastmcp": "3.3.1",
+  "mcp": "1.27.2",
+  "tool_schema": {
+    "name": "divide",
+    "title": null,
+    "description": "Divide two numbers and return a structured result.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "a": {
+          "type": "number"
+        },
+        "b": {
+          "description": "Nonzero divisor",
+          "type": "number"
+        }
+      },
+      "required": [
+        "a",
+        "b"
+      ],
+      "type": "object"
+    },
+    "outputSchema": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "type": "object"
+    },
+    "icons": null,
+    "annotations": {
+      "title": null,
+      "readOnlyHint": true,
+      "destructiveHint": null,
+      "idempotentHint": null,
+      "openWorldHint": false
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": []
+      }
+    },
+    "execution": null
+  },
+  "structured_content": {
+    "value": 3.0
+  },
+  "error_is_error": true,
+  "resource_mime_type": "text/plain",
+  "declared_template_mime_type": "text/markdown",
+  "explicit_content_template_mime_type": "text/markdown",
+  "json_resource_mime_type": "application/json",
+  "prompt_roles": [
+    "user",
+    "assistant"
+  ],
+  "context_not_in_input_schema": true,
+  "progress": [
+    {
+      "progress": 1.0,
+      "total": 3.0,
+      "message": null
+    },
+    {
+      "progress": 2.0,
+      "total": 3.0,
+      "message": null
+    },
+    {
+      "progress": 3.0,
+      "total": 3.0,
+      "message": null
+    }
+  ]
+}

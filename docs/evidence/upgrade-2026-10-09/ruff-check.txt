@@ -1,0 +1,6 @@
+$ uv run --locked ruff check src tests examples
+FASTMCP_MCP_CAMELCASE_COMPAT=false
+
+All checks passed!
+
+exit_code=0

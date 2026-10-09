@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "learn-mcp-server": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--locked",
+        "--directory",
+        "E:/SoftwareProject/learn-mcp-server",
+        "learn-mcp-server"
+      ],
+      "env": {
+        "LEARN_MCP_TRANSPORT": "stdio"
+      }
+    }
+  }
+}

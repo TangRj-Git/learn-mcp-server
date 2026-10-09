@@ -57,15 +57,15 @@ def get_example_resource(name: str) -> str:
 
 
 __all__ = [
+    "get_example_async_tool",
     "get_example_basic_prompt",
     "get_example_basic_resource",
     "get_example_basic_tool",
-    "get_example_async_tool",
     "get_example_end_to_end_client",
     "get_example_error_handling",
     "get_example_prompt_basic",
-    "get_example_resource_basic",
     "get_example_resource",
+    "get_example_resource_basic",
     "get_example_resource_template",
     "get_example_tool_basic",
     "get_example_tool_params",

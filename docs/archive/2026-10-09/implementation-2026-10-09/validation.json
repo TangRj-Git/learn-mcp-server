@@ -1,0 +1,171 @@
+{
+  "date": "2026-10-09",
+  "platform": "win32",
+  "python": "3.10.18",
+  "versions": {
+    "fastmcp": "3.4.8",
+    "mcp": "1.30.0",
+    "starlette": "1.7.0",
+    "ruff": "0.16.10",
+    "pytest": "9.1.1",
+    "anyio": "4.15.1",
+    "cryptography": "50.0.2",
+    "pyjwt": "2.15.1",
+    "pydantic-settings": "2.15.0",
+    "python-multipart": "0.0.32"
+  },
+  "content_counts": {
+    "concepts": 42,
+    "code_examples": 15,
+    "practices": 14
+  },
+  "commands": [
+    {
+      "command": [
+        "uv",
+        "lock",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "check-01.txt"
+    },
+    {
+      "command": [
+        "uv",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "check-02.txt"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "check",
+        "src",
+        "tests",
+        "examples"
+      ],
+      "exit_code": 0,
+      "log": "check-03.txt"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "format",
+        "--check",
+        "src",
+        "tests",
+        "examples"
+      ],
+      "exit_code": 0,
+      "log": "check-04.txt"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "pytest",
+        "-o",
+        "addopts="
+      ],
+      "exit_code": 0,
+      "log": "check-05.txt"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "examples/client_test.py"
+      ],
+      "exit_code": 0,
+      "log": "check-06.txt"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "examples/client_test.py",
+        "--demo"
+      ],
+      "exit_code": 0,
+      "log": "check-07.txt"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "examples/transport_client.py",
+        "stdio"
+      ],
+      "exit_code": 0,
+      "log": "check-08.txt"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "examples/transport_client.py",
+        "http",
+        "--url",
+        "http://127.0.0.1:60003/mcp"
+      ],
+      "exit_code": 0,
+      "log": "check-09.txt"
+    },
+    {
+      "command": [
+        "uvx",
+        "--from",
+        "mypy==2.4.0",
+        "mypy",
+        "--python-executable",
+        ".venv/Scripts/python.exe",
+        "--ignore-missing-imports",
+        "src/learn_mcp_server"
+      ],
+      "exit_code": 0,
+      "log": "check-10.txt"
+    },
+    {
+      "command": [
+        "uv",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "check-11.txt"
+    }
+  ],
+  "http_subprocess_cleaned_up": true,
+  "artifacts": {
+    "learn_mcp_server-0.1.0-py3-none-any.whl": {
+      "sha256": "4979c09f18ba6a25ab562264c8bbcbe9eda31d4f1e4149364cdd6a46a43ed653",
+      "bytes": 53065
+    },
+    "learn_mcp_server-0.1.0.tar.gz": {
+      "sha256": "fa76dba5aef013602afcdfce846e1ea6301328d9338ae5f6c37bf6d13b1ed7ac",
+      "bytes": 364454
+    }
+  },
+  "wheel_contents": {
+    "entries": 35,
+    "demo_included": true,
+    "unwanted_workspace_files": false
+  },
+  "independent_wheel_smoke_exit_code": 0
+}

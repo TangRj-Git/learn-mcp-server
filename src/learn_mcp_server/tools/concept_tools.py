@@ -1,4 +1,7 @@
-from learn_mcp_server.data.concepts import CONCEPTS
+"""概念查询与对比，正文和官方依据来自 data。"""
+
+from learn_mcp_server.data.concepts import CONCEPT_COMPARISONS, CONCEPTS
+from learn_mcp_server.data.references import reference_note
 from learn_mcp_server.utils import format_available_items, normalize_key, require_not_blank
 
 
@@ -15,7 +18,7 @@ def explain_concept(concept: str) -> str:
     return f"""
 # {normalized_concept}
 
-{CONCEPTS[normalized_concept].strip()}
+{CONCEPTS[normalized_concept].strip()}{reference_note(normalized_concept)}
 """
 
 
@@ -34,29 +37,42 @@ def compare_concepts(left: str, right: str) -> str:
         available_concepts = format_available_items(list(CONCEPTS.keys()))
         return f"没有找到概念：{right}\n\n当前支持的概念包括：\n\n{available_concepts}"
 
+    pair = (left_key, right_key)
+    rows = CONCEPT_COMPARISONS.get(pair)
+    if rows is None and (right_key, left_key) in CONCEPT_COMPARISONS:
+        rows = [
+            (label, right_value, left_value)
+            for label, left_value, right_value in CONCEPT_COMPARISONS[(right_key, left_key)]
+        ]
+    comparison = (
+        "\n".join(
+            [
+                f"| 维度 | {left_key} | {right_key} |",
+                "| --- | --- | --- |",
+                *(
+                    f"| {label} | {left_value} | {right_value} |"
+                    for label, left_value, right_value in rows
+                ),
+            ]
+        )
+        if rows
+        else "此组合没有专门比较表，以下提供定义与官方出处；请结合实际使用场景判断。"
+    )
+
     return f"""
 # {left_key} 和 {right_key} 的对比
 
+{comparison}
+
 ## {left_key}
 
-{CONCEPTS[left_key].strip()}
+{CONCEPTS[left_key].strip()}{reference_note(left_key)}
 
 ---
 
 ## {right_key}
 
-{CONCEPTS[right_key].strip()}
-
----
-
-## 简单总结
-
-{left_key} 和 {right_key} 都是 MCP 学习中的重要概念。
-
-如果一个概念偏向“执行动作”，通常更接近 Tool。
-如果一个概念偏向“提供上下文内容”，通常更接近 Resource。
-如果一个概念偏向“复用任务模板”，通常更接近 Prompt。
-如果一个概念偏向“连接和管理”，通常更接近 Host、Client、Server 这一层。
+{CONCEPTS[right_key].strip()}{reference_note(right_key)}
 """
 
 
@@ -78,8 +94,8 @@ Server 提供 MCP 能力，供 Host 通过 Client 发现和使用。
 Server 可以暴露三类核心能力：
 
 - Tool：模型可调用的动作，适合执行、查询、生成、处理。
-- Resource：模型可读取的上下文，适合文档、资料、配置、示例。
-- Prompt：可复用的提示词模板，适合固定任务流程和教学引导。
+- Resource：应用选择加入上下文的资料（application-controlled）。
+- Prompt：用户选择的消息模板（user-controlled），获取不自动调用模型。
 
 ## 通信关系
 

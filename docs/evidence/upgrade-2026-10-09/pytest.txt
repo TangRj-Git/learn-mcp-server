@@ -1,0 +1,28 @@
+$ uv run --locked pytest -o addopts=
+FASTMCP_MCP_CAMELCASE_COMPAT=false
+
+============================= test session starts =============================
+platform win32 -- Python 3.10.18, pytest-9.1.1, pluggy-1.6.0
+rootdir: E:\SoftwareProject\learn-mcp-server
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.15.1, platformdirs-4.12.4
+collected 185 items
+
+tests\test_client_lifecycle.py ..                                        [  1%]
+tests\test_demo.py ....                                                  [  3%]
+tests\test_examples.py ....                                              [  5%]
+tests\test_mcp_integration.py ......                                     [  8%]
+tests\test_prompts.py .....                                              [ 11%]
+tests\test_regressions.py .............................................. [ 36%]
+................                                                         [ 44%]
+tests\test_resources.py ....................................             [ 64%]
+tests\test_settings.py ...                                               [ 65%]
+tests\test_structure.py ......                                           [ 69%]
+tests\test_tools.py ...................................                  [ 88%]
+tests\test_transports.py ..............                                  [ 95%]
+tests\test_utils.py ........                                             [100%]
+
+============================= 185 passed in 6.91s =============================
+
+exit_code=0

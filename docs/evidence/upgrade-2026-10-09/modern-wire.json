@@ -1,0 +1,926 @@
+[
+  {
+    "request_headers": {
+      "Accept": "application/json, text/event-stream",
+      "MCP-Protocol-Version": "2026-07-28",
+      "Mcp-Method": "server/discover"
+    },
+    "request": {
+      "jsonrpc": "2.0",
+      "id": "server/discover",
+      "method": "server/discover",
+      "params": {
+        "_meta": {
+          "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+          "io.modelcontextprotocol/clientCapabilities": {},
+          "io.modelcontextprotocol/clientInfo": {
+            "name": "upgrade-probe",
+            "version": "1"
+          }
+        }
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": "server/discover",
+      "result": {
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "learn-mcp-server",
+            "version": "0.1.0"
+          }
+        },
+        "ttlMs": 0,
+        "cacheScope": "private",
+        "supportedVersions": [
+          "2026-07-28"
+        ],
+        "capabilities": {
+          "logging": {},
+          "prompts": {
+            "listChanged": false
+          },
+          "resources": {
+            "subscribe": false,
+            "listChanged": false
+          },
+          "tools": {
+            "listChanged": false
+          },
+          "extensions": {
+            "io.modelcontextprotocol/ui": {}
+          }
+        },
+        "instructions": "用于学习 MCP：用 Tool 查询和自查，用 Resource 读取资料，用 Prompt 获取消息模板。主课程基线：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28；旧握手仅作为历史对照，可选能力不等于本项目已实现。",
+        "resultType": "complete"
+      }
+    }
+  },
+  {
+    "request_headers": {
+      "Accept": "application/json, text/event-stream",
+      "MCP-Protocol-Version": "2026-07-28",
+      "Mcp-Method": "tools/list"
+    },
+    "request": {
+      "jsonrpc": "2.0",
+      "id": "tools/list",
+      "method": "tools/list",
+      "params": {
+        "_meta": {
+          "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+          "io.modelcontextprotocol/clientCapabilities": {},
+          "io.modelcontextprotocol/clientInfo": {
+            "name": "upgrade-probe",
+            "version": "1"
+          }
+        }
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": "tools/list",
+      "result": {
+        "cacheScope": "private",
+        "resultType": "complete",
+        "tools": [
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "获取项目版本、运行依赖、协议基线与学习能力。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {}
+            },
+            "name": "get_server_info",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Get Server Info"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "列出主课程、历史专题与最新规范对照模块。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {}
+            },
+            "name": "list_learning_modules",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "List Learning Modules"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "返回有效主题的学习路线，最后进入综合验证。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {}
+            },
+            "name": "get_learning_path",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Get Learning Path"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "根据概念名称解释 MCP 相关概念。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "concept": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "concept"
+              ]
+            },
+            "name": "explain_concept",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Explain Concept"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "对比两个 MCP 概念的区别。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "left": {
+                  "type": "string"
+                },
+                "right": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "left",
+                "right"
+              ]
+            },
+            "name": "compare_concepts",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Compare Concepts"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "返回 MCP 核心概念之间的关系图谱。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {}
+            },
+            "name": "get_concept_map",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Get Concept Map"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "列出当前内置的 MCP 示例代码主题。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {}
+            },
+            "name": "list_code_examples",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "List Code Examples"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "根据主题名称获取 MCP 示例代码。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "topic": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "topic"
+              ]
+            },
+            "name": "get_code_example",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Get Code Example"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "解释一个 MCP 示例代码的作用。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "example_name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "example_name"
+              ]
+            },
+            "name": "explain_code_example",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Explain Code Example"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "返回对应等级的目标、练习和验收；未知等级不静默替换。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "level": {
+                  "enum": [
+                    "beginner",
+                    "intermediate",
+                    "advanced"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "level"
+              ]
+            },
+            "name": "generate_learning_plan",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Generate Learning Plan"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "读取某个主题的练习和专属验收标准，不执行代码。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "topic": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "topic"
+              ]
+            },
+            "name": "get_practice_task",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Get Practice Task"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "关键词辅助自查：列出覆盖与遗漏，不能判断回答是否正确。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "topic": {
+                  "type": "string"
+                },
+                "answer": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "topic",
+                "answer"
+              ]
+            },
+            "name": "check_answer",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Check Answer"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "沿有效主题序列推荐下一步；完成节点不会返回起点。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "current_topic": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "current_topic"
+              ]
+            },
+            "name": "suggest_next_step",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Suggest Next Step"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "解释生态常见的 mcpServers JSON 配置；不解析所有 Host 的专属格式，不执行命令。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "config_text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "config_text"
+              ]
+            },
+            "name": "explain_config",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Explain Config"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "生成本地 stdio MCP Host 配置。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "command": {
+                  "type": "string"
+                },
+                "args": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "command",
+                "args"
+              ]
+            },
+            "name": "generate_stdio_config",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Generate Stdio Config"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "生成 streamable-http MCP Host 配置。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "server_url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "server_url"
+              ]
+            },
+            "name": "generate_http_config",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Generate Http Config"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "对比本地 stdio 配置和远程 streamable-http 配置。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {}
+            },
+            "name": "compare_local_and_remote_config",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Compare Local And Remote Config"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "根据具体错误证据列出排查动作；没有证据时说明不确定性。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "issue_description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "issue_description"
+              ]
+            },
+            "name": "diagnose_issue",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Diagnose Issue"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "解释错误并给出验证动作；不会根据单个框架名做确定性结论。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "error_text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "error_text"
+              ]
+            },
+            "name": "explain_error_message",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "Explain Error Message"
+          },
+          {
+            "_meta": {
+              "fastmcp": {
+                "tags": []
+              }
+            },
+            "annotations": {
+              "openWorldHint": false,
+              "readOnlyHint": true
+            },
+            "description": "读取本项目常见调试问题清单。",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {}
+            },
+            "name": "list_common_errors",
+            "outputSchema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "type": "object",
+              "x-fastmcp-wrap-result": true
+            },
+            "title": "List Common Errors"
+          }
+        ],
+        "ttlMs": 0,
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "learn-mcp-server",
+            "version": "0.1.0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "request_headers": {
+      "Accept": "application/json, text/event-stream",
+      "MCP-Protocol-Version": "2026-07-28",
+      "Mcp-Method": "resources/read",
+      "Mcp-Name": "mcp://concepts/TOOL"
+    },
+    "request": {
+      "jsonrpc": "2.0",
+      "id": "resources/read",
+      "method": "resources/read",
+      "params": {
+        "_meta": {
+          "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+          "io.modelcontextprotocol/clientCapabilities": {},
+          "io.modelcontextprotocol/clientInfo": {
+            "name": "upgrade-probe",
+            "version": "1"
+          }
+        },
+        "uri": "mcp://concepts/TOOL"
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": "resources/read",
+      "result": {
+        "cacheScope": "private",
+        "contents": [
+          {
+            "mimeType": "text/markdown",
+            "text": "# tool\n\nTool 是 MCP Server 暴露给模型调用的可执行能力（model-controlled）。\n它适合动作、计算、查询，用 @mcp.tool() 注册；类型和 docstring 形成 schema 与说明。\n模型提出调用不代表已授权。call_tool 返回 content、可选 structuredContent 和错误状态。\n\n适用版本：主课程：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28；旧握手与已弃用能力另有历史标记。\n\n官方出处：[查看文档](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)\n\n内容核对日期：2026-10-09",
+            "uri": "mcp://concepts/TOOL"
+          }
+        ],
+        "resultType": "complete",
+        "ttlMs": 0,
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "learn-mcp-server",
+            "version": "0.1.0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "request_headers": {
+      "Accept": "application/json, text/event-stream",
+      "MCP-Protocol-Version": "2026-07-28",
+      "Mcp-Method": "tools/call",
+      "Mcp-Name": "get_server_info"
+    },
+    "request": {
+      "jsonrpc": "2.0",
+      "id": "tools/call",
+      "method": "tools/call",
+      "params": {
+        "_meta": {
+          "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+          "io.modelcontextprotocol/clientCapabilities": {},
+          "io.modelcontextprotocol/clientInfo": {
+            "name": "upgrade-probe",
+            "version": "1"
+          }
+        },
+        "name": "get_server_info",
+        "arguments": {}
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": "tools/call",
+      "result": {
+        "_meta": {
+          "fastmcp": {
+            "wrap_result": true
+          },
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "learn-mcp-server",
+            "version": "0.1.0"
+          }
+        },
+        "content": [
+          {
+            "text": "# learn-mcp-server\n\n这是一个用于学习 MCP 的 FastMCP Server。\n\n项目版本：0.1.0；FastMCP：4.1.0；SDK：2.3.0。\n教学基线：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28。默认 Client 自动协商 modern；旧握手仅作历史对照，可选专题不等于已实现。\n\n1. get_server_info / list_learning_modules / get_learning_path：信息与路线\n2. explain_concept / compare_concepts / get_concept_map：概念、比较与出处\n3. 示例、专属练习、配置静态校验与调试诊断\n4. Markdown Resources、Resource Templates 和 Prompt 消息模板\n\ncheck_answer 只作关键词自查；Prompt 获取不自动调用模型。\n工具不执行提交的代码或命令，不读取用户文件，不探测网络。\n",
+            "type": "text"
+          }
+        ],
+        "isError": false,
+        "resultType": "complete",
+        "structuredContent": {
+          "result": "# learn-mcp-server\n\n这是一个用于学习 MCP 的 FastMCP Server。\n\n项目版本：0.1.0；FastMCP：4.1.0；SDK：2.3.0。\n教学基线：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28。默认 Client 自动协商 modern；旧握手仅作历史对照，可选专题不等于已实现。\n\n1. get_server_info / list_learning_modules / get_learning_path：信息与路线\n2. explain_concept / compare_concepts / get_concept_map：概念、比较与出处\n3. 示例、专属练习、配置静态校验与调试诊断\n4. Markdown Resources、Resource Templates 和 Prompt 消息模板\n\ncheck_answer 只作关键词自查；Prompt 获取不自动调用模型。\n工具不执行提交的代码或命令，不读取用户文件，不探测网络。\n"
+        }
+      }
+    }
+  }
+]

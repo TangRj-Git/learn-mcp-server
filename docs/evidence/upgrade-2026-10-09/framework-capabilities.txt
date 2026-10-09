@@ -1,0 +1,36 @@
+FastMCP 4.1.0 / fastmcp-slim 4.1.0
+source: .venv\Lib\site-packages\fastmcp\server\low_level.py
+sha256: b29252903387d8cbac5dadccf0a358e3e6342257262083223a55d5122d5ebb27
+
+545:         """
+546:         merged_experimental = {
+547:             **self.fastmcp.experimental_capabilities,
+548:             **(experimental_capabilities or {}),
+549:         }
+550:         capabilities = super().get_capabilities(
+551:             notification_options,
+552:             merged_experimental or None,
+553:             extensions,
+554:             protocol_version=protocol_version,
+555:         )
+556: 
+557:         # Advertise every registered extension's settings under
+558:         # capabilities.extensions[identifier]. The hand-rolled UI splice stays
+559:         # for now (MCP Apps migrates onto the extension API in a later phase);
+560:         # the two coexist. Advertisement is unconditional — the SDK's pre-2026
+561:         # version sieve strips capabilities.extensions on legacy eras, a known
+562:         # limitation (sdk-feedback #2).
+563:         existing_extensions = capabilities.extensions or {}
+564:         registered_extensions = {
+565:             extension.identifier: extension.settings()
+566:             for extension in self.fastmcp._extensions.values()
+567:         }
+568:         return capabilities.model_copy(
+569:             update={
+570:                 "extensions": {
+571:                     **existing_extensions,
+572:                     UI_EXTENSION_ID: {},
+573:                     **registered_extensions,
+574:                 },
+575:             }
+576:         )

@@ -1,0 +1,39 @@
+........................................................................ [ 45%]
+........................................................................ [ 91%]
+..............                                                           [100%]
+============================== warnings summary ===============================
+tests/test_demo.py::test_demo_schema_results_error_modes_and_context_injection
+  C:\Users\ADMINI~1\AppData\Local\Temp\learn-mcp-implementation-20261009\migration-workspace\tests\test_demo.py:21: FastMCPDeprecationWarning: Accessing `Tool.inputSchema` is deprecated; MCP SDK v2 renamed this field to `input_schema`. Update your code to read `.input_schema` instead.
+    schema = tools["divide"].inputSchema
+
+tests/test_demo.py::test_demo_schema_results_error_modes_and_context_injection
+  C:\Users\ADMINI~1\AppData\Local\Temp\learn-mcp-implementation-20261009\migration-workspace\tests\test_demo.py:25: FastMCPDeprecationWarning: Accessing `Tool.outputSchema` is deprecated; MCP SDK v2 renamed this field to `output_schema`. Update your code to read `.output_schema` instead.
+    assert tools["divide"].outputSchema["type"] == "object"
+
+tests/test_demo.py::test_demo_schema_results_error_modes_and_context_injection
+  C:\Users\ADMINI~1\AppData\Local\Temp\learn-mcp-implementation-20261009\migration-workspace\tests\test_demo.py:40: FastMCPDeprecationWarning: Accessing `CallToolResult.isError` is deprecated; MCP SDK v2 renamed this field to `is_error`. Update your code to read `.is_error` instead.
+    assert unknown.isError and "unknown_tool" in unknown.content[0].text
+
+tests/test_demo.py::test_demo_resources_query_parameters_and_prompt_wire_conversion
+  C:\Users\ADMINI~1\AppData\Local\Temp\learn-mcp-implementation-20261009\migration-workspace\tests\test_demo.py:49: FastMCPDeprecationWarning: Accessing `TextResourceContents.mimeType` is deprecated; MCP SDK v2 renamed this field to `mime_type`. Update your code to read `.mime_type` instead.
+    assert metadata.mimeType == "application/json"
+
+tests/test_mcp_integration.py::test_mcp_client_lists_registered_capabilities
+  C:\Users\ADMINI~1\AppData\Local\Temp\learn-mcp-implementation-20261009\migration-workspace\tests\test_mcp_integration.py:50: FastMCPDeprecationWarning: Accessing `ResourceTemplate.uriTemplate` is deprecated; MCP SDK v2 renamed this field to `uri_template`. Update your code to read `.uri_template` instead.
+    assert {template.uriTemplate for template in resource_templates} >= {
+
+tests/test_mcp_integration.py::test_all_registered_documents_and_templates_are_readable_markdown
+  C:\Users\ADMINI~1\AppData\Local\Temp\learn-mcp-implementation-20261009\migration-workspace\tests\test_mcp_integration.py:90: FastMCPDeprecationWarning: Accessing `Resource.mimeType` is deprecated; MCP SDK v2 renamed this field to `mime_type`. Update your code to read `.mime_type` instead.
+    assert item.description and item.mimeType == "text/markdown"
+
+tests/test_mcp_integration.py::test_all_registered_documents_and_templates_are_readable_markdown
+  C:\Users\ADMINI~1\AppData\Local\Temp\learn-mcp-implementation-20261009\migration-workspace\tests\test_mcp_integration.py:106: FastMCPDeprecationWarning: Accessing `ToolAnnotations.readOnlyHint` is deprecated; MCP SDK v2 renamed this field to `read_only_hint`. Update your code to read `.read_only_hint` instead.
+    assert tool.annotations.readOnlyHint is True
+
+tests/test_mcp_integration.py::test_all_registered_documents_and_templates_are_readable_markdown
+  C:\Users\ADMINI~1\AppData\Local\Temp\learn-mcp-implementation-20261009\migration-workspace\tests\test_mcp_integration.py:107: FastMCPDeprecationWarning: Accessing `ToolAnnotations.openWorldHint` is deprecated; MCP SDK v2 renamed this field to `open_world_hint`. Update your code to read `.open_world_hint` instead.
+    assert tool.annotations.openWorldHint is False
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+158 passed, 8 warnings in 5.68s
+

@@ -1,0 +1,74 @@
+{
+  "transport": "stdio",
+  "tools": [
+    "get_server_info",
+    "list_learning_modules",
+    "get_learning_path",
+    "explain_concept",
+    "compare_concepts",
+    "get_concept_map",
+    "list_code_examples",
+    "get_code_example",
+    "explain_code_example",
+    "generate_learning_plan",
+    "get_practice_task",
+    "check_answer",
+    "suggest_next_step",
+    "explain_config",
+    "generate_stdio_config",
+    "generate_http_config",
+    "compare_local_and_remote_config",
+    "diagnose_issue",
+    "explain_error_message",
+    "list_common_errors"
+  ],
+  "resources": 39,
+  "resource_templates": [
+    "mcp://concepts/{name}",
+    "mcp://examples/{name}",
+    "mcp://debug/{error_type}",
+    "mcp://configs/{name}",
+    "mcp://curriculum/{level}"
+  ],
+  "prompts": [
+    "explain_mcp_topic",
+    "generate_mcp_study_plan",
+    "review_mcp_code",
+    "debug_mcp_error",
+    "summarize_mcp_concept"
+  ],
+  "tool_data": "# learn-mcp-server\n\n这是一个用于学习 MCP 的 FastMCP Server。\n\n项目版本：0.1.0；FastMCP：3.4.8；SDK：1.30.0。\n教学基线：FastMCP 3.x / MCP Python SDK 1.x / 协议 2025-11-25。2026-07-28 是版本对照，当前运行栈未宣称实现。\n\n1. get_server_info / list_learning_modules / get_learning_path：信息与路线\n2. explain_concept / compare_concepts / get_concept_map：概念、比较与出处\n3. 示例、专属练习、配置静态校验与调试诊断\n4. Markdown Resources、Resource Templates 和 Prompt 消息模板\n\ncheck_answer 只作关键词自查；Prompt 获取不自动调用模型。\n工具不执行提交的代码或命令，不读取用户文件，不探测网络。\n",
+  "resource_mime": "text/markdown",
+  "template_mime": "text/markdown",
+  "prompt_roles": [
+    "user"
+  ],
+  "progress": []
+}
+
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                                                                             │
+│                        ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                        █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                             │
+│                                                                             │
+│                                                                             │
+│                                FastMCP 3.4.8                                │
+│                            https://gofastmcp.com                            │
+│                                                                             │
+│                 🖥  Server:      learn-mcp-server, 0.1.0                     │
+│                 🚀 Deploy free: https://horizon.prefect.io                  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         🎉 Update available: 4.1.0                          │
+│                     Run: pip install --upgrade fastmcp                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+[10/09/26 10:13:02] INFO     Starting MCP server               transport.py:241
+                             'learn-mcp-server' with transport                 
+                             'stdio'                                           

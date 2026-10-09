@@ -2,6 +2,8 @@ CONFIG_DOCS = {
     "stdio": """
 # stdio 配置
 
+这里展示生态常见 mcpServers JSON；具体 Host 可能用其他格式，需查产品官方文档。
+
 stdio 配置适合本地 MCP Server。Host 会启动一个本地进程，并通过标准输入输出交换 MCP 消息。
 
 发布后推荐使用 uvx 运行。uvx 会为这个 MCP Server 创建隔离环境并自动安装依赖，不需要用户手动配置 Python 解释器路径。
@@ -23,7 +25,7 @@ stdio 配置适合本地 MCP Server。Host 会启动一个本地进程，并通�
 }
 ```
 
-本地开发示例：
+本地开发示例（替换为自己的项目绝对路径，Host 需要能找到 uv）：
 
 ```json
 {
@@ -32,10 +34,14 @@ stdio 配置适合本地 MCP Server。Host 会启动一个本地进程，并通�
       "command": "uv",
       "args": [
         "run",
+        "--locked",
         "--directory",
-        "E:\\\\SoftwareProject\\\\learn-mcp-server",
+        "E:/SoftwareProject/learn-mcp-server",
         "learn-mcp-server"
-      ]
+      ],
+      "env": {
+        "LEARN_MCP_TRANSPORT": "stdio"
+      }
     }
   }
 }
@@ -43,6 +49,8 @@ stdio 配置适合本地 MCP Server。Host 会启动一个本地进程，并通�
 """,
     "streamable-http": """
 # streamable-http 配置
+
+这是生态常见 mcpServers JSON，不保证适用于全部 Host。
 
 streamable-http 配置适合已经通过 HTTP 运行的 MCP Server。
 
@@ -74,7 +82,7 @@ streamable-http 配置适合已经通过 HTTP 运行的 MCP Server。
 
 常见配置问题包括：
 
-1. command 没有使用 uvx，或者用户机器没有安装 uv
+1. 启动命令不可执行、PATH 不正确或解释器环境不匹配
 2. uvx 的 --from 包名或版本号写错
 3. 本地开发配置中的 uv run --directory 路径写错
 4. stdio 配置中误写了 url
@@ -102,7 +110,7 @@ stdio 模式通过标准输入和标准输出传输 MCP 协议消息。
 stdio 常见错误包括：
 
 1. 使用 print 污染 stdout 协议通道
-2. Host 配置中的 command 没有指向 uvx 或 uv
+2. command 无法执行；Python/Node/二进制均可用，uv 是推荐而非必需
 3. uvx 的 --from 包名或版本号不正确
 4. 本地开发配置中的 uv run --directory 路径不正确
 """,
@@ -112,9 +120,11 @@ stdio 常见错误包括：
 streamable-http 常见错误包括：
 
 1. MCP Server 没有启动
-2. url 没有指向 /mcp
+2. url 与实际 endpoint 不符，本项目默认 /mcp
 3. 端口被占用
 4. Host 无法访问对应地址
+5. 无效 Origin 返回 403，不可信 Host 返回 421
+6. CORS、Origin 防护与身份授权是不同机制
 """,
     "config-errors": """
 # 配置错误
@@ -131,7 +141,7 @@ streamable-http 常见错误包括：
 
 常见 MCP 调试问题包括：
 
-1. 用户机器没有安装 uv，或者 uvx 无法解析包名
+1. 启动命令不可执行，或使用 uv/uvx 时未安装 uv、包名/版本无法解析
 2. 启动命令路径写错
 3. 本地开发配置中的 --directory 不在期望目录
 4. 工具函数缺少类型注解

@@ -1,0 +1,62 @@
+name: checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONIOENCODING: utf-8
+      NO_PROXY: 127.0.0.1,localhost,::1
+      FASTMCP_MCP_CAMELCASE_COMPAT: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.10"
+          enable-cache: true
+      - name: Install locked dependencies
+        run: uv sync --locked
+      - name: Lint
+        run: uv run --locked ruff check src tests examples scripts
+      - name: Format
+        run: uv run --locked ruff format --check src tests examples scripts
+      - name: Tests including real transports
+        run: uv run --locked pytest -o addopts=""
+      - name: Complete learning example
+        run: uv run --locked python examples/client_test.py --demo
+      - name: Build
+        run: uv build
+      - name: Verify wheel outside checkout
+        shell: python {0}
+        run: |
+          import os
+          import pathlib
+          import subprocess
+          import tempfile
+
+          root = pathlib.Path.cwd()
+          wheel = next((root / "dist").glob("*.whl"))
+          with tempfile.TemporaryDirectory(prefix="learn-mcp-wheel-") as directory:
+              outside = pathlib.Path(directory)
+              environment = outside / "environment"
+              requirements = outside / "runtime.txt"
+              subprocess.run(["uv", "export", "--locked", "--no-dev", "--no-emit-project",
+                              "--no-hashes", "--output-file", str(requirements)], check=True)
+              subprocess.run(["uv", "venv", "--python", "3.10", str(environment)], check=True)
+              python = environment / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+              subprocess.run(["uv", "pip", "install", "--python", str(python),
+                              "-r", str(requirements), str(wheel)], check=True)
+              env = {key: value for key, value in os.environ.items() if key.upper() != "PYTHONPATH"}
+              subprocess.run([str(python), str(root / "scripts/verify_installed_package.py")],
+                             cwd=outside, env=env, check=True)

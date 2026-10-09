@@ -1,0 +1,22 @@
+{
+  "normal": {
+    "status": 200,
+    "mcp_initialize_returned": true,
+    "response_prefix": "event: message\r\ndata: {\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"protocolVersion\":\"2025-11-25\",\"ca"
+  },
+  "foreign_origin": {
+    "status": 200,
+    "mcp_initialize_returned": true,
+    "response_prefix": "event: message\r\ndata: {\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"protocolVersion\":\"2025-11-25\",\"ca"
+  },
+  "foreign_host": {
+    "status": 200,
+    "mcp_initialize_returned": true,
+    "response_prefix": "event: message\r\ndata: {\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"protocolVersion\":\"2025-11-25\",\"ca"
+  },
+  "foreign_both": {
+    "status": 200,
+    "mcp_initialize_returned": true,
+    "response_prefix": "event: message\r\ndata: {\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"protocolVersion\":\"2025-11-25\",\"ca"
+  }
+}

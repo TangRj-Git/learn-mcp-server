@@ -1,0 +1,9 @@
+$ uv build
+FASTMCP_MCP_CAMELCASE_COMPAT=false
+
+Building source distribution...
+Building wheel from source distribution...
+Successfully built dist\learn_mcp_server-0.1.0.tar.gz
+Successfully built dist\learn_mcp_server-0.1.0-py3-none-any.whl
+
+exit_code=0

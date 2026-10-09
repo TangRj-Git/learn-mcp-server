@@ -1,0 +1,23 @@
+============================= test session starts =============================
+platform win32 -- Python 3.10.18, pytest-9.1.1, pluggy-1.6.0
+rootdir: E:\SoftwareProject\learn-mcp-server
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.15.1, platformdirs-4.12.4
+collected 158 items
+
+tests\test_client_lifecycle.py ..                                        [  1%]
+tests\test_demo.py ....                                                  [  3%]
+tests\test_examples.py ....                                              [  6%]
+tests\test_mcp_integration.py ...                                        [  8%]
+tests\test_prompts.py .....                                              [ 11%]
+tests\test_regressions.py ............................................   [ 39%]
+tests\test_resources.py ....................................             [ 62%]
+tests\test_settings.py ...                                               [ 63%]
+tests\test_structure.py ......                                           [ 67%]
+tests\test_tools.py ...................................                  [ 89%]
+tests\test_transports.py ........                                        [ 94%]
+tests\test_utils.py ........                                             [100%]
+
+============================= 158 passed in 4.47s =============================
+

@@ -1,0 +1,620 @@
+[
+  {
+    "command": [
+      "examples/client_test.py",
+      "--mode",
+      "auto"
+    ],
+    "result": {
+      "transport": "in-memory",
+      "protocol_version": "2026-07-28",
+      "server_version": "0.1.0",
+      "tools": [
+        "get_server_info",
+        "list_learning_modules",
+        "get_learning_path",
+        "explain_concept",
+        "compare_concepts",
+        "get_concept_map",
+        "list_code_examples",
+        "get_code_example",
+        "explain_code_example",
+        "generate_learning_plan",
+        "get_practice_task",
+        "check_answer",
+        "suggest_next_step",
+        "explain_config",
+        "generate_stdio_config",
+        "generate_http_config",
+        "compare_local_and_remote_config",
+        "diagnose_issue",
+        "explain_error_message",
+        "list_common_errors"
+      ],
+      "resources": 39,
+      "resource_templates": [
+        "mcp://concepts/{name}",
+        "mcp://examples/{name}",
+        "mcp://debug/{error_type}",
+        "mcp://configs/{name}",
+        "mcp://curriculum/{level}"
+      ],
+      "prompts": [
+        "explain_mcp_topic",
+        "generate_mcp_study_plan",
+        "review_mcp_code",
+        "debug_mcp_error",
+        "summarize_mcp_concept"
+      ],
+      "tool_data": "# learn-mcp-server\n\n这是一个用于学习 MCP 的 FastMCP Server。\n\n项目版本：0.1.0；FastMCP：4.1.0；SDK：2.3.0。\n教学基线：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28。默认 Client 自动协商 modern；旧握手仅作历史对照，可选专题不等于已实现。\n\n1. get_server_info / list_learning_modules / get_learning_path：信息与路线\n2. explain_concept / compare_concepts / get_concept_map：概念、比较与出处\n3. 示例、专属练习、配置静态校验与调试诊断\n4. Markdown Resources、Resource Templates 和 Prompt 消息模板\n\ncheck_answer 只作关键词自查；Prompt 获取不自动调用模型。\n工具不执行提交的代码或命令，不读取用户文件，不探测网络。\n",
+      "resource_mime": "text/markdown",
+      "template_mime": "text/markdown",
+      "prompt_roles": [
+        "user"
+      ],
+      "progress": []
+    }
+  },
+  {
+    "command": [
+      "examples/transport_client.py",
+      "stdio",
+      "--mode",
+      "auto"
+    ],
+    "result": {
+      "transport": "stdio",
+      "protocol_version": "2026-07-28",
+      "server_version": "0.1.0",
+      "tools": [
+        "get_server_info",
+        "list_learning_modules",
+        "get_learning_path",
+        "explain_concept",
+        "compare_concepts",
+        "get_concept_map",
+        "list_code_examples",
+        "get_code_example",
+        "explain_code_example",
+        "generate_learning_plan",
+        "get_practice_task",
+        "check_answer",
+        "suggest_next_step",
+        "explain_config",
+        "generate_stdio_config",
+        "generate_http_config",
+        "compare_local_and_remote_config",
+        "diagnose_issue",
+        "explain_error_message",
+        "list_common_errors"
+      ],
+      "resources": 39,
+      "resource_templates": [
+        "mcp://concepts/{name}",
+        "mcp://examples/{name}",
+        "mcp://debug/{error_type}",
+        "mcp://configs/{name}",
+        "mcp://curriculum/{level}"
+      ],
+      "prompts": [
+        "explain_mcp_topic",
+        "generate_mcp_study_plan",
+        "review_mcp_code",
+        "debug_mcp_error",
+        "summarize_mcp_concept"
+      ],
+      "tool_data": "# learn-mcp-server\n\n这是一个用于学习 MCP 的 FastMCP Server。\n\n项目版本：0.1.0；FastMCP：4.1.0；SDK：2.3.0。\n教学基线：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28。默认 Client 自动协商 modern；旧握手仅作历史对照，可选专题不等于已实现。\n\n1. get_server_info / list_learning_modules / get_learning_path：信息与路线\n2. explain_concept / compare_concepts / get_concept_map：概念、比较与出处\n3. 示例、专属练习、配置静态校验与调试诊断\n4. Markdown Resources、Resource Templates 和 Prompt 消息模板\n\ncheck_answer 只作关键词自查；Prompt 获取不自动调用模型。\n工具不执行提交的代码或命令，不读取用户文件，不探测网络。\n",
+      "resource_mime": "text/markdown",
+      "template_mime": "text/markdown",
+      "prompt_roles": [
+        "user"
+      ],
+      "progress": []
+    }
+  },
+  {
+    "command": [
+      "examples/client_test.py",
+      "--mode",
+      "2026-07-28"
+    ],
+    "result": {
+      "transport": "in-memory",
+      "protocol_version": "2026-07-28",
+      "server_version": null,
+      "tools": [
+        "get_server_info",
+        "list_learning_modules",
+        "get_learning_path",
+        "explain_concept",
+        "compare_concepts",
+        "get_concept_map",
+        "list_code_examples",
+        "get_code_example",
+        "explain_code_example",
+        "generate_learning_plan",
+        "get_practice_task",
+        "check_answer",
+        "suggest_next_step",
+        "explain_config",
+        "generate_stdio_config",
+        "generate_http_config",
+        "compare_local_and_remote_config",
+        "diagnose_issue",
+        "explain_error_message",
+        "list_common_errors"
+      ],
+      "resources": 39,
+      "resource_templates": [
+        "mcp://concepts/{name}",
+        "mcp://examples/{name}",
+        "mcp://debug/{error_type}",
+        "mcp://configs/{name}",
+        "mcp://curriculum/{level}"
+      ],
+      "prompts": [
+        "explain_mcp_topic",
+        "generate_mcp_study_plan",
+        "review_mcp_code",
+        "debug_mcp_error",
+        "summarize_mcp_concept"
+      ],
+      "tool_data": "# learn-mcp-server\n\n这是一个用于学习 MCP 的 FastMCP Server。\n\n项目版本：0.1.0；FastMCP：4.1.0；SDK：2.3.0。\n教学基线：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28。默认 Client 自动协商 modern；旧握手仅作历史对照，可选专题不等于已实现。\n\n1. get_server_info / list_learning_modules / get_learning_path：信息与路线\n2. explain_concept / compare_concepts / get_concept_map：概念、比较与出处\n3. 示例、专属练习、配置静态校验与调试诊断\n4. Markdown Resources、Resource Templates 和 Prompt 消息模板\n\ncheck_answer 只作关键词自查；Prompt 获取不自动调用模型。\n工具不执行提交的代码或命令，不读取用户文件，不探测网络。\n",
+      "resource_mime": "text/markdown",
+      "template_mime": "text/markdown",
+      "prompt_roles": [
+        "user"
+      ],
+      "progress": []
+    }
+  },
+  {
+    "command": [
+      "examples/transport_client.py",
+      "stdio",
+      "--mode",
+      "2026-07-28"
+    ],
+    "result": {
+      "transport": "stdio",
+      "protocol_version": "2026-07-28",
+      "server_version": null,
+      "tools": [
+        "get_server_info",
+        "list_learning_modules",
+        "get_learning_path",
+        "explain_concept",
+        "compare_concepts",
+        "get_concept_map",
+        "list_code_examples",
+        "get_code_example",
+        "explain_code_example",
+        "generate_learning_plan",
+        "get_practice_task",
+        "check_answer",
+        "suggest_next_step",
+        "explain_config",
+        "generate_stdio_config",
+        "generate_http_config",
+        "compare_local_and_remote_config",
+        "diagnose_issue",
+        "explain_error_message",
+        "list_common_errors"
+      ],
+      "resources": 39,
+      "resource_templates": [
+        "mcp://concepts/{name}",
+        "mcp://examples/{name}",
+        "mcp://debug/{error_type}",
+        "mcp://configs/{name}",
+        "mcp://curriculum/{level}"
+      ],
+      "prompts": [
+        "explain_mcp_topic",
+        "generate_mcp_study_plan",
+        "review_mcp_code",
+        "debug_mcp_error",
+        "summarize_mcp_concept"
+      ],
+      "tool_data": "# learn-mcp-server\n\n这是一个用于学习 MCP 的 FastMCP Server。\n\n项目版本：0.1.0；FastMCP：4.1.0；SDK：2.3.0。\n教学基线：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28。默认 Client 自动协商 modern；旧握手仅作历史对照，可选专题不等于已实现。\n\n1. get_server_info / list_learning_modules / get_learning_path：信息与路线\n2. explain_concept / compare_concepts / get_concept_map：概念、比较与出处\n3. 示例、专属练习、配置静态校验与调试诊断\n4. Markdown Resources、Resource Templates 和 Prompt 消息模板\n\ncheck_answer 只作关键词自查；Prompt 获取不自动调用模型。\n工具不执行提交的代码或命令，不读取用户文件，不探测网络。\n",
+      "resource_mime": "text/markdown",
+      "template_mime": "text/markdown",
+      "prompt_roles": [
+        "user"
+      ],
+      "progress": []
+    }
+  },
+  {
+    "command": [
+      "examples/client_test.py",
+      "--mode",
+      "legacy"
+    ],
+    "result": {
+      "transport": "in-memory",
+      "protocol_version": "2025-11-25",
+      "server_version": "0.1.0",
+      "tools": [
+        "get_server_info",
+        "list_learning_modules",
+        "get_learning_path",
+        "explain_concept",
+        "compare_concepts",
+        "get_concept_map",
+        "list_code_examples",
+        "get_code_example",
+        "explain_code_example",
+        "generate_learning_plan",
+        "get_practice_task",
+        "check_answer",
+        "suggest_next_step",
+        "explain_config",
+        "generate_stdio_config",
+        "generate_http_config",
+        "compare_local_and_remote_config",
+        "diagnose_issue",
+        "explain_error_message",
+        "list_common_errors"
+      ],
+      "resources": 39,
+      "resource_templates": [
+        "mcp://concepts/{name}",
+        "mcp://examples/{name}",
+        "mcp://debug/{error_type}",
+        "mcp://configs/{name}",
+        "mcp://curriculum/{level}"
+      ],
+      "prompts": [
+        "explain_mcp_topic",
+        "generate_mcp_study_plan",
+        "review_mcp_code",
+        "debug_mcp_error",
+        "summarize_mcp_concept"
+      ],
+      "tool_data": "# learn-mcp-server\n\n这是一个用于学习 MCP 的 FastMCP Server。\n\n项目版本：0.1.0；FastMCP：4.1.0；SDK：2.3.0。\n教学基线：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28。默认 Client 自动协商 modern；旧握手仅作历史对照，可选专题不等于已实现。\n\n1. get_server_info / list_learning_modules / get_learning_path：信息与路线\n2. explain_concept / compare_concepts / get_concept_map：概念、比较与出处\n3. 示例、专属练习、配置静态校验与调试诊断\n4. Markdown Resources、Resource Templates 和 Prompt 消息模板\n\ncheck_answer 只作关键词自查；Prompt 获取不自动调用模型。\n工具不执行提交的代码或命令，不读取用户文件，不探测网络。\n",
+      "resource_mime": "text/markdown",
+      "template_mime": "text/markdown",
+      "prompt_roles": [
+        "user"
+      ],
+      "progress": []
+    }
+  },
+  {
+    "command": [
+      "examples/transport_client.py",
+      "stdio",
+      "--mode",
+      "legacy"
+    ],
+    "result": {
+      "transport": "stdio",
+      "protocol_version": "2025-11-25",
+      "server_version": "0.1.0",
+      "tools": [
+        "get_server_info",
+        "list_learning_modules",
+        "get_learning_path",
+        "explain_concept",
+        "compare_concepts",
+        "get_concept_map",
+        "list_code_examples",
+        "get_code_example",
+        "explain_code_example",
+        "generate_learning_plan",
+        "get_practice_task",
+        "check_answer",
+        "suggest_next_step",
+        "explain_config",
+        "generate_stdio_config",
+        "generate_http_config",
+        "compare_local_and_remote_config",
+        "diagnose_issue",
+        "explain_error_message",
+        "list_common_errors"
+      ],
+      "resources": 39,
+      "resource_templates": [
+        "mcp://concepts/{name}",
+        "mcp://examples/{name}",
+        "mcp://debug/{error_type}",
+        "mcp://configs/{name}",
+        "mcp://curriculum/{level}"
+      ],
+      "prompts": [
+        "explain_mcp_topic",
+        "generate_mcp_study_plan",
+        "review_mcp_code",
+        "debug_mcp_error",
+        "summarize_mcp_concept"
+      ],
+      "tool_data": "# learn-mcp-server\n\n这是一个用于学习 MCP 的 FastMCP Server。\n\n项目版本：0.1.0；FastMCP：4.1.0；SDK：2.3.0。\n教学基线：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28。默认 Client 自动协商 modern；旧握手仅作历史对照，可选专题不等于已实现。\n\n1. get_server_info / list_learning_modules / get_learning_path：信息与路线\n2. explain_concept / compare_concepts / get_concept_map：概念、比较与出处\n3. 示例、专属练习、配置静态校验与调试诊断\n4. Markdown Resources、Resource Templates 和 Prompt 消息模板\n\ncheck_answer 只作关键词自查；Prompt 获取不自动调用模型。\n工具不执行提交的代码或命令，不读取用户文件，不探测网络。\n",
+      "resource_mime": "text/markdown",
+      "template_mime": "text/markdown",
+      "prompt_roles": [
+        "user"
+      ],
+      "progress": []
+    }
+  },
+  {
+    "command": [
+      "examples/client_test.py",
+      "--demo",
+      "--mode",
+      "auto"
+    ],
+    "result": {
+      "transport": "in-memory",
+      "protocol_version": "2026-07-28",
+      "server_version": "0.1.0",
+      "tools": [
+        "divide",
+        "count_steps"
+      ],
+      "resources": 1,
+      "resource_templates": [
+        "demo://topics/{name}{?detail}"
+      ],
+      "prompts": [
+        "explain_topic",
+        "study_plan"
+      ],
+      "tool_data": {
+        "value": 3.0
+      },
+      "resource_mime": "application/json",
+      "template_mime": "text/markdown",
+      "prompt_roles": [
+        "user",
+        "assistant"
+      ],
+      "progress": [
+        {
+          "progress": 1.0,
+          "total": 3.0,
+          "message": null
+        },
+        {
+          "progress": 2.0,
+          "total": 3.0,
+          "message": null
+        },
+        {
+          "progress": 3.0,
+          "total": 3.0,
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "command": [
+      "examples/client_test.py",
+      "--demo",
+      "--mode",
+      "legacy"
+    ],
+    "result": {
+      "transport": "in-memory",
+      "protocol_version": "2025-11-25",
+      "server_version": "0.1.0",
+      "tools": [
+        "divide",
+        "count_steps"
+      ],
+      "resources": 1,
+      "resource_templates": [
+        "demo://topics/{name}{?detail}"
+      ],
+      "prompts": [
+        "explain_topic",
+        "study_plan"
+      ],
+      "tool_data": {
+        "value": 3.0
+      },
+      "resource_mime": "application/json",
+      "template_mime": "text/markdown",
+      "prompt_roles": [
+        "user",
+        "assistant"
+      ],
+      "progress": [
+        {
+          "progress": 1.0,
+          "total": 3.0,
+          "message": null
+        },
+        {
+          "progress": 2.0,
+          "total": 3.0,
+          "message": null
+        },
+        {
+          "progress": 3.0,
+          "total": 3.0,
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "command": [
+      "examples/transport_client.py",
+      "http",
+      "--url",
+      "http://127.0.0.1:52137/mcp",
+      "--mode",
+      "auto"
+    ],
+    "result": {
+      "transport": "http",
+      "protocol_version": "2026-07-28",
+      "server_version": "0.1.0",
+      "tools": [
+        "get_server_info",
+        "list_learning_modules",
+        "get_learning_path",
+        "explain_concept",
+        "compare_concepts",
+        "get_concept_map",
+        "list_code_examples",
+        "get_code_example",
+        "explain_code_example",
+        "generate_learning_plan",
+        "get_practice_task",
+        "check_answer",
+        "suggest_next_step",
+        "explain_config",
+        "generate_stdio_config",
+        "generate_http_config",
+        "compare_local_and_remote_config",
+        "diagnose_issue",
+        "explain_error_message",
+        "list_common_errors"
+      ],
+      "resources": 39,
+      "resource_templates": [
+        "mcp://concepts/{name}",
+        "mcp://examples/{name}",
+        "mcp://debug/{error_type}",
+        "mcp://configs/{name}",
+        "mcp://curriculum/{level}"
+      ],
+      "prompts": [
+        "explain_mcp_topic",
+        "generate_mcp_study_plan",
+        "review_mcp_code",
+        "debug_mcp_error",
+        "summarize_mcp_concept"
+      ],
+      "tool_data": "# learn-mcp-server\n\n这是一个用于学习 MCP 的 FastMCP Server。\n\n项目版本：0.1.0；FastMCP：4.1.0；SDK：2.3.0。\n教学基线：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28。默认 Client 自动协商 modern；旧握手仅作历史对照，可选专题不等于已实现。\n\n1. get_server_info / list_learning_modules / get_learning_path：信息与路线\n2. explain_concept / compare_concepts / get_concept_map：概念、比较与出处\n3. 示例、专属练习、配置静态校验与调试诊断\n4. Markdown Resources、Resource Templates 和 Prompt 消息模板\n\ncheck_answer 只作关键词自查；Prompt 获取不自动调用模型。\n工具不执行提交的代码或命令，不读取用户文件，不探测网络。\n",
+      "resource_mime": "text/markdown",
+      "template_mime": "text/markdown",
+      "prompt_roles": [
+        "user"
+      ],
+      "progress": []
+    }
+  },
+  {
+    "command": [
+      "examples/transport_client.py",
+      "http",
+      "--url",
+      "http://127.0.0.1:52137/mcp",
+      "--mode",
+      "2026-07-28"
+    ],
+    "result": {
+      "transport": "http",
+      "protocol_version": "2026-07-28",
+      "server_version": null,
+      "tools": [
+        "get_server_info",
+        "list_learning_modules",
+        "get_learning_path",
+        "explain_concept",
+        "compare_concepts",
+        "get_concept_map",
+        "list_code_examples",
+        "get_code_example",
+        "explain_code_example",
+        "generate_learning_plan",
+        "get_practice_task",
+        "check_answer",
+        "suggest_next_step",
+        "explain_config",
+        "generate_stdio_config",
+        "generate_http_config",
+        "compare_local_and_remote_config",
+        "diagnose_issue",
+        "explain_error_message",
+        "list_common_errors"
+      ],
+      "resources": 39,
+      "resource_templates": [
+        "mcp://concepts/{name}",
+        "mcp://examples/{name}",
+        "mcp://debug/{error_type}",
+        "mcp://configs/{name}",
+        "mcp://curriculum/{level}"
+      ],
+      "prompts": [
+        "explain_mcp_topic",
+        "generate_mcp_study_plan",
+        "review_mcp_code",
+        "debug_mcp_error",
+        "summarize_mcp_concept"
+      ],
+      "tool_data": "# learn-mcp-server\n\n这是一个用于学习 MCP 的 FastMCP Server。\n\n项目版本：0.1.0；FastMCP：4.1.0；SDK：2.3.0。\n教学基线：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28。默认 Client 自动协商 modern；旧握手仅作历史对照，可选专题不等于已实现。\n\n1. get_server_info / list_learning_modules / get_learning_path：信息与路线\n2. explain_concept / compare_concepts / get_concept_map：概念、比较与出处\n3. 示例、专属练习、配置静态校验与调试诊断\n4. Markdown Resources、Resource Templates 和 Prompt 消息模板\n\ncheck_answer 只作关键词自查；Prompt 获取不自动调用模型。\n工具不执行提交的代码或命令，不读取用户文件，不探测网络。\n",
+      "resource_mime": "text/markdown",
+      "template_mime": "text/markdown",
+      "prompt_roles": [
+        "user"
+      ],
+      "progress": []
+    }
+  },
+  {
+    "command": [
+      "examples/transport_client.py",
+      "http",
+      "--url",
+      "http://127.0.0.1:52137/mcp",
+      "--mode",
+      "legacy"
+    ],
+    "result": {
+      "transport": "http",
+      "protocol_version": "2025-11-25",
+      "server_version": "0.1.0",
+      "tools": [
+        "get_server_info",
+        "list_learning_modules",
+        "get_learning_path",
+        "explain_concept",
+        "compare_concepts",
+        "get_concept_map",
+        "list_code_examples",
+        "get_code_example",
+        "explain_code_example",
+        "generate_learning_plan",
+        "get_practice_task",
+        "check_answer",
+        "suggest_next_step",
+        "explain_config",
+        "generate_stdio_config",
+        "generate_http_config",
+        "compare_local_and_remote_config",
+        "diagnose_issue",
+        "explain_error_message",
+        "list_common_errors"
+      ],
+      "resources": 39,
+      "resource_templates": [
+        "mcp://concepts/{name}",
+        "mcp://examples/{name}",
+        "mcp://debug/{error_type}",
+        "mcp://configs/{name}",
+        "mcp://curriculum/{level}"
+      ],
+      "prompts": [
+        "explain_mcp_topic",
+        "generate_mcp_study_plan",
+        "review_mcp_code",
+        "debug_mcp_error",
+        "summarize_mcp_concept"
+      ],
+      "tool_data": "# learn-mcp-server\n\n这是一个用于学习 MCP 的 FastMCP Server。\n\n项目版本：0.1.0；FastMCP：4.1.0；SDK：2.3.0。\n教学基线：FastMCP 4.x / MCP Python SDK 2.x / 协议 2026-07-28。默认 Client 自动协商 modern；旧握手仅作历史对照，可选专题不等于已实现。\n\n1. get_server_info / list_learning_modules / get_learning_path：信息与路线\n2. explain_concept / compare_concepts / get_concept_map：概念、比较与出处\n3. 示例、专属练习、配置静态校验与调试诊断\n4. Markdown Resources、Resource Templates 和 Prompt 消息模板\n\ncheck_answer 只作关键词自查；Prompt 获取不自动调用模型。\n工具不执行提交的代码或命令，不读取用户文件，不探测网络。\n",
+      "resource_mime": "text/markdown",
+      "template_mime": "text/markdown",
+      "prompt_roles": [
+        "user"
+      ],
+      "progress": []
+    }
+  }
+]

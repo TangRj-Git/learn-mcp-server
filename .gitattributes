@@ -1,0 +1,5 @@
+# Preserve original audit evidence byte-for-byte across Git checkouts.
+docs/archive/2026-10-08/audit-2026-10-08/** -text
+docs/archive/2026-10-08/official-review-2026-10-08/** -text
+docs/archive/2026-10-09/implementation-2026-10-09/** -text
+docs/evidence/upgrade-2026-10-09/** -text

@@ -1,0 +1,21 @@
+{
+  "files_checked": [
+    "README.md",
+    "docs\\implementation-status-2026-10-09.md",
+    "docs\\learning-guide.md",
+    "docs\\official-docs-gap-analysis-2026-10-08.md",
+    "docs\\project-audit-2026-10-08.md",
+    "docs\\project-design-and-roadmap.md",
+    "docs\\protocol-versions.md",
+    "docs\\review-and-upgrade-2026-10-09.md"
+  ],
+  "local_links": 139,
+  "json_blocks": 10,
+  "python_blocks": 11,
+  "http_bodies": 1,
+  "runtime_material_blocks": 18,
+  "errors": [],
+  "git_diff_check_exit": 0,
+  "git_diff_check_stdout": "",
+  "git_diff_check_stderr": ""
+}

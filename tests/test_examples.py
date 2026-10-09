@@ -14,7 +14,9 @@ def test_stdio_config_is_valid_json():
 
 
 def test_streamable_http_config_is_valid_json():
-    config = json.loads((ROOT / "examples" / "streamable_http_config.json").read_text(encoding="utf-8"))
+    config = json.loads(
+        (ROOT / "examples" / "streamable_http_config.json").read_text(encoding="utf-8")
+    )
 
     server = config["mcpServers"]["learn-mcp-server-http"]
     assert server["url"] == "http://127.0.0.1:8000/mcp"

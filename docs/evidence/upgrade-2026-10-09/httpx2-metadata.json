@@ -1,0 +1,29 @@
+{
+  "source": "https://pypi.org/pypi/httpx2/json",
+  "date": "2026-10-09",
+  "version": "2.13.1",
+  "requires_python": ">=3.10",
+  "requires_dist": [
+    "anyio>=4.10; sys_platform != \"emscripten\"",
+    "httpcore2==2.13.1; sys_platform != \"emscripten\"",
+    "httpx2-jsfetch; sys_platform == \"emscripten\" and python_version >= \"3.12\"",
+    "idna>=3.18",
+    "truststore>=0.10; sys_platform != \"emscripten\"",
+    "typing-extensions>=4.5.0; python_version < \"3.13\"",
+    "brotli>=1.2.0; platform_python_implementation == \"CPython\" and extra == \"brotli\"",
+    "brotlicffi>=1.2.0.2; platform_python_implementation != \"CPython\" and extra == \"brotli\"",
+    "click>=8.4.2; extra == \"cli\"",
+    "pygments==2.*; extra == \"cli\"",
+    "rich<16,>=10; extra == \"cli\"",
+    "h2<5,>=3; extra == \"http2\"",
+    "socksio==1.*; extra == \"socks\"",
+    "wsproto>=1.2; extra == \"ws\"",
+    "backports-zstd>=1.0.0; python_version <= \"3.13\" and extra == \"zstd\""
+  ],
+  "is_prerelease": false,
+  "all_release_files_yanked": false,
+  "release_upload_times_utc": [
+    "2026-09-23T07:47:20.995722Z",
+    "2026-09-23T07:47:23.052504Z"
+  ]
+}

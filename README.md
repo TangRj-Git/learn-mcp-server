@@ -1,21 +1,29 @@
 # learn-mcp-server
 
-`learn-mcp-server` 是一个使用 **FastMCP** 编写的 MCP 学习型 Server。它既是一个可以运行的 MCP Server，也是一个用于学习 MCP 项目结构、Tool、Resource、Resource Template、Prompt、配置和调试流程的教学示例。
+用于学习 MCP 的 Python Server。主服务提供可查询的教材，独立 demo 展示 Tool、Resource、Resource Template 和 Prompt 的实际行为。代码保持显式注册与静态数据，适合沿调用链阅读。
 
-这个仓库的根目录 README 只保留项目介绍、安装运行、Host 配置和常用命令。更完整的需求设计、开发路线和模块拆分说明已经移动到 [docs/project-design-and-roadmap.md](docs/project-design-and-roadmap.md)。
+## 快速开始
 
-## 功能
+需要 Python >=3.10 和 [uv](https://docs.astral.sh/uv/getting-started/installation/)。在项目根目录执行：
 
-当前版本提供：
+```powershell
+uv sync --locked
+uv run --locked python examples/client_test.py
+uv run --locked python examples/client_test.py --demo
+```
 
-- MCP 核心概念讲解
-- FastMCP Tool / Resource / Resource Template / Prompt 示例
-- 学习路线、课程资源和练习任务
-- stdio 与 streamable-http 配置说明
-- 常见错误诊断和调试建议
-- FastMCP Client 集成验证脚本
+第一条 Client 命令检查主服务，第二条检查教学 demo。它们使用内存连接；真实 stdio、HTTP、Inspector 与 Host 接入见 [运行与配置](docs/running-and-configuration.md)。
 
-当前注册能力：
+demo 预期得到 `{"value": 3.0}`、Markdown Template、user/assistant 两条 Prompt 消息和进度 1、2、3；它主动检查零分母，相关 stderr 错误日志属于演示内容。
+
+## 两个服务，各有用途
+
+| 服务 | 入口 | 学习用途 |
+| --- | --- | --- |
+| 主服务 | `learn-mcp-server` / `learn_mcp_server.server` | 查询概念、示例、课程、练习、配置与诊断 |
+| 教学 demo | `learn_mcp_server.demo` / `examples/minimal_server.py` | 计算、schema、结构化结果、错误、MIME、Prompt 消息与进度 |
+
+主服务的能力清单：
 
 ```text
 Tools: 20 个
@@ -24,187 +32,55 @@ Resource Templates: 5 个
 Prompts: 5 个
 ```
 
-## 环境要求
+主服务使用 `mcp://...` 资料 URI；demo 使用 `demo://...`，并提供 `divide` / `count_steps`。两份实例独立运行，具体操作见 [学习指南](docs/learning-guide.md)。
 
-推荐使用 `uv` 管理项目环境和运行命令。
+## 当前版本
 
-```powershell
-uv --version
-```
+| 层次 | 当前基线 |
+| --- | --- |
+| 项目 | 0.1.0 |
+| Python | >=3.10 |
+| FastMCP | 4.1.0；依赖范围 >=4.1.0,<5 |
+| MCP Python SDK | 2.3.0；依赖范围 >=2.3.0,<3 |
+| MCP 协议 | 2026-07-28；旧握手作为历史对照 |
 
-如果没有安装 `uv`，Windows PowerShell 可以使用：
+`uv.lock` 固定工作区依赖。版本来源、Client 模式和迁移差异见 [版本说明](docs/protocol-versions.md)。
 
-```powershell
-irm https://astral.sh/uv/install.ps1 | iex
-```
+## 从哪里开始阅读
 
-项目 Python 版本由 [.python-version](.python-version) 固定为：
+| 目标 | 入口 |
+| --- | --- |
+| 启动服务、连接 HTTP、配置 Host/Inspector | [运行与配置](docs/running-and-configuration.md) |
+| 按课程操作并观察结果 | [学习指南](docs/learning-guide.md) |
+| 看懂模块职责、调用链和后续路线 | [项目架构](docs/project-design-and-roadmap.md) |
+| 理解当前 API、新旧协议与升级方法 | [版本说明](docs/protocol-versions.md) |
+| 查找审计报告、原始依据与历史记录 | [文档目录](docs/README.md) |
 
-```text
-3.10
-```
-
-## 安装依赖
-
-在项目根目录执行：
-
-```powershell
-uv sync
-```
-
-## 运行测试
-
-```powershell
-uv run pytest -q
-```
-
-## 本地客户端验证
-
-```powershell
-uv run python examples\client_test.py
-```
-
-该脚本会列出当前 MCP Server 暴露的 Tools、Resources、Resource Templates 和 Prompts，并调用 `get_server_info` 做一次基本验证。
-
-## Inspector 调试
-
-Windows 下建议使用正斜杠绝对路径，并显式指定 `server.py` 里的 `mcp` 对象：
-
-```powershell
-uv run fastmcp dev inspector --no-reload E:/SoftwareProject/learn-mcp-server/src/learn_mcp_server/server.py:mcp
-```
-
-如果换成你自己的项目路径，也保持 `/`，不要写成 `E:\...`。反斜杠路径在 Inspector 的 URL 转换过程中可能被错误解析。
-
-Inspector 连接成功后，可以在页面里点击 `List Resources`、`List Templates`、`Tools`、`Prompts` 查看当前 MCP Server 暴露的能力。
-
-## stdio 配置
-
-### 发布后给别人使用
-
-发布到 PyPI 后，推荐让 Host 使用 `uvx` 启动。`uvx` 会创建隔离环境并自动安装依赖，使用者不需要手动配置 Python 解释器路径。
-
-```json
-{
-  "mcpServers": {
-    "learn-mcp-server": {
-      "command": "uvx",
-      "args": [
-        "--from",
-        "learn-mcp-server==0.1.0",
-        "learn-mcp-server"
-      ]
-    }
-  }
-}
-```
-
-示例文件见 [examples/stdio_config.json](examples/stdio_config.json)。
-
-### 本地开发使用
-
-如果还没有发布到 PyPI，或者想让 Host 直接使用当前工作区代码，可以使用 `uv run --directory`：
-
-```json
-{
-  "mcpServers": {
-    "learn-mcp-server": {
-      "command": "uv",
-      "args": [
-        "run",
-        "--directory",
-        "E:\\SoftwareProject\\learn-mcp-server",
-        "learn-mcp-server"
-      ]
-    }
-  }
-}
-```
-
-把 `--directory` 后面的路径替换成你本机项目根目录。
-
-## streamable-http 运行
-
-PowerShell：
-
-```powershell
-$env:LEARN_MCP_TRANSPORT="streamable-http"
-uv run learn-mcp-server
-```
-
-默认地址：
+## 项目目录
 
 ```text
-http://127.0.0.1:8000/mcp
+src/learn_mcp_server/  Server、显式注册、教材与完整 demo
+examples/             学习用 Client、demo 入口和 Host 配置
+scripts/              运行验证与安装包验收
+tests/               函数、MCP、真实传输与生命周期测试
+docs/                 当前指南、报告、证据与历史归档
+.github/workflows/    CI 检查
 ```
 
-对应 Host 配置示例见 [examples/streamable_http_config.json](examples/streamable_http_config.json)。
+调用链：`server → registry → tools/resources/prompts → data/utils`。先读 [server.py](src/learn_mcp_server/server.py) 与 [registry.py](src/learn_mcp_server/registry.py)，再选一个能力沿着其函数和教材数据阅读。
 
-恢复 stdio：
+[示例目录](examples/README.md) 区分主服务与 demo；[维护脚本](scripts/README.md) 说明如何验收；[架构文档](docs/project-design-and-roadmap.md) 给出完整源码阅读顺序。
 
-```powershell
-Remove-Item Env:\LEARN_MCP_TRANSPORT
-```
-
-## 常用命令
+## 检查与构建
 
 ```powershell
-uv sync
-uv run pytest -q
-uv run python examples\client_test.py
-uv run fastmcp dev inspector --no-reload E:/SoftwareProject/learn-mcp-server/src/learn_mcp_server/server.py:mcp
+uv run --locked ruff check src tests examples scripts
+uv run --locked ruff format --check src tests examples scripts
+uv run --locked pytest -o addopts=""
+uv pip check
 uv build
 ```
 
-## 项目结构
+[CI](.github/workflows/ci.yml) 执行检查、真实传输、构建和仓库外 wheel 验证。当前依赖升级的证据见 [检查与升级报告](docs/reports/review-and-upgrade-2026-10-09.md)。
 
-```text
-learn-mcp-server/
-├── README.md
-├── pyproject.toml
-├── uv.lock
-├── .python-version
-├── docs/
-│   └── project-design-and-roadmap.md
-├── examples/
-│   ├── client_test.py
-│   ├── stdio_config.json
-│   └── streamable_http_config.json
-├── src/
-│   └── learn_mcp_server/
-│       ├── server.py
-│       ├── registry.py
-│       ├── settings.py
-│       ├── data/
-│       ├── prompts/
-│       ├── resources/
-│       ├── tools/
-│       └── utils/
-└── tests/
-```
-
-## 入口说明
-
-- [src/learn_mcp_server/server.py](src/learn_mcp_server/server.py)：创建 FastMCP 实例并启动服务
-- [src/learn_mcp_server/registry.py](src/learn_mcp_server/registry.py)：集中注册 Tools、Resources、Resource Templates 和 Prompts
-- [src/learn_mcp_server/settings.py](src/learn_mcp_server/settings.py)：运行配置和 transport 选择
-- [examples/client_test.py](examples/client_test.py)：本地 FastMCP Client 验证脚本
-- [docs/project-design-and-roadmap.md](docs/project-design-and-roadmap.md)：完整项目需求、设计和开发路线
-
-## 打包
-
-```powershell
-uv build
-```
-
-构建产物会生成到 `dist/`，该目录不会提交到 Git。
-
-## 发布后运行
-
-发布到 PyPI 后，可以直接用：
-
-```powershell
-uvx --from learn-mcp-server==0.1.0 learn-mcp-server
-```
-
-这也是推荐写入 MCP Host 配置的运行方式。
+`check_answer` 是关键词自查，Prompt 返回消息模板；配置解释和诊断处理文本，不执行提交的命令/代码或探测目标网络。环境变量说明见 [.env.example](.env.example)，程序不自动加载 `.env`。

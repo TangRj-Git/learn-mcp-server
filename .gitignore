@@ -9,4 +9,5 @@ __pycache__/
 .idea/
 .DS_Store
 dist/
+artifacts/
 *.egg-info/

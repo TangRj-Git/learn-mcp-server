@@ -1,3 +1,8 @@
+import ast
+from importlib.resources import files
+
+from learn_mcp_server.data.references import BASELINE
+
 CODE_EXAMPLES = {
     "basic-tool": """
 # basic-tool
@@ -71,11 +76,11 @@ def explain_concept(concept: str) -> str:
 
 ```python
 @mcp.tool()
-async def fetch_status(url: str) -> str:
+async def get_status() -> str:
     return "ok"
 ```
 
-这个示例说明：FastMCP 可以注册 async 函数。
+这是 async 函数注册片段，没有真实 I/O；有可观察异步操作的完整例子见 context-progress。
 """,
     "error-handling": """
 # error-handling
@@ -131,5 +136,59 @@ asyncio.run(main())
 这个示例说明：学习 MCP 时，不只要知道 Tool、Resource、Prompt 怎么写，还要知道 Client 如何发现并使用它们。
 """,
 }
+
+_DEMO_SOURCE = files("learn_mcp_server").joinpath("demo.py").read_text(encoding="utf-8")
+_DEMO_LINES = _DEMO_SOURCE.splitlines()
+_DEMO_FUNCTIONS = {
+    node.name: node
+    for node in ast.parse(_DEMO_SOURCE).body
+    if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))
+}
+
+
+def _snippet(name: str) -> str:
+    node = _DEMO_FUNCTIONS[name]
+    start = min([node.lineno, *(decorator.lineno for decorator in node.decorator_list)])
+    return "\n".join(_DEMO_LINES[start - 1 : node.end_lineno])
+
+
+CODE_EXAMPLES["minimal-server"] = (
+    "# minimal-server\n\n完整可运行示例；保存后使用 uv run python 文件路径，默认 stdio。\n\n```python\n"
+    + _DEMO_SOURCE
+    + "\n```"
+)
+for _topic, _function, _explanation in (
+    ("schema", "divide", "必需数字、默认 mode、Literal 枚举和 Field 说明；分母零属于业务错误。"),
+    (
+        "structured-output",
+        "divide",
+        "对象返回生成 outputSchema 与 structuredContent；Client.data 是框架接口。",
+    ),
+    (
+        "resource-json",
+        "demo_metadata",
+        "JSON 显式序列化，声明 application/json；list 与 read 分开观察。",
+    ),
+    (
+        "resource-query",
+        "topic_document",
+        "RFC 6570 路径与可选查询参数；未知主题失败，实际内容声明 Markdown MIME。",
+    ),
+    ("prompt-messages", "explain_topic", "Prompt 返回 user/assistant messages，不自动调用模型。"),
+    (
+        "context-progress",
+        "count_steps",
+        "CurrentContext 注入不在 inputSchema 中，Client 接收三个进度事件。",
+    ),
+):
+    CODE_EXAMPLES[_topic] = (
+        f"# {_topic}\n\n{_explanation}\n\n以下是片段；所需 import、mcp 实例和启动入口见 minimal-server。\n\n```python\n{_snippet(_function)}\n```"
+    )
+
+for _name, _text in list(CODE_EXAMPLES.items()):
+    CODE_EXAMPLES[_name] = (
+        _text.strip()
+        + f"\n\n适用：{BASELINE}。装饰器片段不能单独启动；完整入口见 minimal-server。\n官方文档：https://gofastmcp.com/servers/server"
+    )
 
 __all__ = ["CODE_EXAMPLES"]

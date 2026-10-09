@@ -1,0 +1,501 @@
+{
+  "data_counts": {
+    "concepts": 23,
+    "examples": 8,
+    "config_docs": 4,
+    "debug_guides": 5,
+    "curriculums": 3,
+    "practices": 10
+  },
+  "metadata": {
+    "empty_tool_descriptions": [],
+    "empty_prompt_descriptions": [
+      "explain_mcp_topic",
+      "generate_mcp_study_plan",
+      "review_mcp_code",
+      "debug_mcp_error",
+      "summarize_mcp_concept"
+    ],
+    "empty_resource_descriptions": [
+      "get_docs_introduction",
+      "get_docs_tools",
+      "get_docs_resources",
+      "get_docs_prompts",
+      "get_docs_transports",
+      "get_docs_architecture",
+      "get_docs_host_client_server",
+      "get_docs_concepts",
+      "get_docs_resource_template",
+      "get_docs_stdio",
+      "get_docs_streamable_http",
+      "get_docs_json_rpc",
+      "get_docs_lifecycle",
+      "get_docs_elicitation",
+      "get_docs_authorization",
+      "get_docs_security",
+      "get_docs_tasks",
+      "get_curriculum_beginner",
+      "get_curriculum_intermediate",
+      "get_curriculum_advanced",
+      "get_example_basic_tool",
+      "get_example_basic_resource",
+      "get_example_tool_basic",
+      "get_example_resource_basic",
+      "get_example_resource_template",
+      "get_example_basic_prompt",
+      "get_example_prompt_basic",
+      "get_example_tool_params",
+      "get_example_async_tool",
+      "get_example_error_handling",
+      "get_example_end_to_end_client",
+      "get_debug_common_errors",
+      "get_debug_stdio_errors",
+      "get_debug_http_errors",
+      "get_debug_config_errors",
+      "get_docs_config_stdio",
+      "get_docs_config_http",
+      "get_docs_config_local_vs_remote",
+      "get_docs_config_common_errors"
+    ],
+    "tool_annotations": {
+      "get_server_info": null,
+      "list_learning_modules": null,
+      "get_learning_path": null,
+      "explain_concept": null,
+      "compare_concepts": null,
+      "get_concept_map": null,
+      "list_code_examples": null,
+      "get_code_example": null,
+      "explain_code_example": null,
+      "generate_learning_plan": null,
+      "get_practice_task": null,
+      "check_answer": null,
+      "suggest_next_step": null,
+      "explain_config": null,
+      "generate_stdio_config": null,
+      "generate_http_config": null,
+      "compare_local_and_remote_config": null,
+      "diagnose_issue": null,
+      "explain_error_message": null,
+      "list_common_errors": null
+    },
+    "input_schemas": {
+      "get_server_info": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
+      },
+      "list_learning_modules": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
+      },
+      "get_learning_path": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
+      },
+      "explain_concept": {
+        "additionalProperties": false,
+        "properties": {
+          "concept": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "concept"
+        ],
+        "type": "object"
+      },
+      "compare_concepts": {
+        "additionalProperties": false,
+        "properties": {
+          "left": {
+            "type": "string"
+          },
+          "right": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "left",
+          "right"
+        ],
+        "type": "object"
+      },
+      "get_concept_map": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
+      },
+      "list_code_examples": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
+      },
+      "get_code_example": {
+        "additionalProperties": false,
+        "properties": {
+          "topic": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "topic"
+        ],
+        "type": "object"
+      },
+      "explain_code_example": {
+        "additionalProperties": false,
+        "properties": {
+          "example_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "example_name"
+        ],
+        "type": "object"
+      },
+      "generate_learning_plan": {
+        "additionalProperties": false,
+        "properties": {
+          "level": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "level"
+        ],
+        "type": "object"
+      },
+      "get_practice_task": {
+        "additionalProperties": false,
+        "properties": {
+          "topic": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "topic"
+        ],
+        "type": "object"
+      },
+      "check_answer": {
+        "additionalProperties": false,
+        "properties": {
+          "topic": {
+            "type": "string"
+          },
+          "answer": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "topic",
+          "answer"
+        ],
+        "type": "object"
+      },
+      "suggest_next_step": {
+        "additionalProperties": false,
+        "properties": {
+          "current_topic": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "current_topic"
+        ],
+        "type": "object"
+      },
+      "explain_config": {
+        "additionalProperties": false,
+        "properties": {
+          "config_text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "config_text"
+        ],
+        "type": "object"
+      },
+      "generate_stdio_config": {
+        "additionalProperties": false,
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "args": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "command",
+          "args"
+        ],
+        "type": "object"
+      },
+      "generate_http_config": {
+        "additionalProperties": false,
+        "properties": {
+          "server_url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "server_url"
+        ],
+        "type": "object"
+      },
+      "compare_local_and_remote_config": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
+      },
+      "diagnose_issue": {
+        "additionalProperties": false,
+        "properties": {
+          "issue_description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "issue_description"
+        ],
+        "type": "object"
+      },
+      "explain_error_message": {
+        "additionalProperties": false,
+        "properties": {
+          "error_text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error_text"
+        ],
+        "type": "object"
+      },
+      "list_common_errors": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
+      }
+    },
+    "prompt_arguments": {
+      "explain_mcp_topic": [
+        {
+          "name": "topic",
+          "description": null,
+          "required": true
+        },
+        {
+          "name": "level",
+          "description": null,
+          "required": true
+        }
+      ],
+      "generate_mcp_study_plan": [
+        {
+          "name": "level",
+          "description": null,
+          "required": true
+        },
+        {
+          "name": "days",
+          "description": "Provide as a JSON string matching the following schema: {\"type\":\"integer\"}",
+          "required": true
+        }
+      ],
+      "review_mcp_code": [
+        {
+          "name": "code",
+          "description": null,
+          "required": true
+        }
+      ],
+      "debug_mcp_error": [
+        {
+          "name": "error",
+          "description": null,
+          "required": true
+        }
+      ],
+      "summarize_mcp_concept": [
+        {
+          "name": "topic",
+          "description": null,
+          "required": true
+        }
+      ]
+    }
+  },
+  "full_protocol_sweep": {
+    "tools": 20,
+    "static_resources": 39,
+    "template_values": 43,
+    "prompts": 5
+  },
+  "protocol_negative_cases": {
+    "config_array": {
+      "is_error": true,
+      "text": "Error calling tool 'explain_config': 'list' object has no attribute 'get'"
+    },
+    "config_null": {
+      "is_error": true,
+      "text": "Error calling tool 'explain_config': 'NoneType' object has no attribute 'get'"
+    },
+    "config_wrong_field_types": {
+      "is_error": false,
+      "text": "# MCP 配置解释\n\n## bad\n这是一个 stdio 配置。\ncommand: 17\nargs: server.py\n"
+    },
+    "config_both_transports": {
+      "is_error": false,
+      "text": "# MCP 配置解释\n\n## bad\n这是一个 stdio 配置。\ncommand: python\nargs: []\n"
+    },
+    "bad_url": {
+      "is_error": false,
+      "text": "{\n  \"mcpServers\": {\n    \"learn-mcp-server-http\": {\n      \"url\": \"javascript:alert(1)\"\n    }\n  }\n}"
+    },
+    "invalid_level": {
+      "is_error": false,
+      "text": "\n# MCP 入门学习计划\n\n第 1 天：理解 Host、Client、Server 的关系。\n第 2 天：实现并调用第一个 Tool。\n第 3 天：实现静态 Resource，并理解 Resource 和 Tool 的区别。\n第 4 天：实现 Resource Template，学习 URI 参数映射。\n第 5 天：实现 Prompt，封装可复用任务模板。\n第 6 天：使用 Inspector 查看 Tools、Resources、Prompts。\n第 7 天：整理测试、配置和常见错误排查方式。\n"
+    },
+    "false_answer": {
+      "is_error": false,
+      "text": "\n# 答案反馈\n\n答得不错，你的回答已经覆盖了 Tool 练习 的关键点。\n\n命中的关键词：tool, 动作, 执行\n\n可以继续补充：它适合什么场景、如何注册、Host 如何发现和调用它。\n"
+    },
+    "blank_concept": {
+      "is_error": true,
+      "text": "Error calling tool 'explain_concept': concept 不能为空。"
+    },
+    "wrong_args": {
+      "is_error": true,
+      "text": "1 validation error for call[generate_stdio_config]\nargs.0\n  Input should be a valid string [type=string_type, input_value=17, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+    },
+    "missing_concept": {
+      "is_error": true,
+      "text": "1 validation error for call[explain_concept]\nconcept\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing_argument"
+    },
+    "unknown_concept": {
+      "is_error": false,
+      "text": "没有找到概念：not-present\n\n当前支持的概念包括：\n\nmcp, host, client, server, tool, resource, prompt, stdio, streamable-http, json-rpc, resource-template, transport, sse, capability-negotiation, notification, sampling, roots, elicitation, authorization, security, tasks, config, debug"
+    }
+  },
+  "invalid_prompt_cases": {
+    "0": {
+      "accepted": true,
+      "text": "\n请为 beginner 水平的学习者生成一个 0 天 MCP 学习计划。\n\n要求：\n\n1. 每天包含学习目标\n2. 每天包含一个小练习\n3. 每天说明验收标准\n4. 覆盖 Tool、Resource、Resource Template、Prompt 和 transport\n"
+    },
+    "-1": {
+      "accepted": true,
+      "text": "\n请为 beginner 水平的学习者生成一个 -1 天 MCP 学习计划。\n\n要求：\n\n1. 每天包含学习目标\n2. 每天包含一个小练习\n3. 每天说明验收标准\n4. 覆盖 Tool、Resource、Resource Template、Prompt 和 transport\n"
+    },
+    "1000000": {
+      "accepted": true,
+      "text": "\n请为 beginner 水平的学习者生成一个 1000000 天 MCP 学习计划。\n\n要求：\n\n1. 每天包含学习目标\n2. 每天包含一个小练习\n3. 每天说明验收标准\n4. 覆盖 Tool、Resource、Resource Template、Prompt 和 transport\n"
+    },
+    "nope": {
+      "accepted": false,
+      "error": "Could not convert argument 'days' with value 'nope' to expected type <class 'int'>. Error: 1 validation error for int\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='nope', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/int_parsing"
+    }
+  },
+  "same_learning_plan_body": true,
+  "bad_navigation": [
+    {
+      "current_topic": "debug",
+      "recommended": "tests",
+      "concept_result": "没有找到概念：tests"
+    },
+    {
+      "current_topic": "debug",
+      "recommended": "tests",
+      "concept_result": "没有找到概念：tests"
+    }
+  ],
+  "embedded_examples": {
+    "basic-tool": "syntax and decorator registration passed",
+    "basic-resource": "syntax and decorator registration passed",
+    "resource-template": "syntax and decorator registration passed",
+    "basic-prompt": "syntax and decorator registration passed",
+    "tool-params": "syntax and decorator registration passed",
+    "async-tool": "syntax and decorator registration passed",
+    "error-handling": "syntax and decorator registration passed",
+    "end-to-end-client": "syntax passed; in-memory API separately verified"
+  },
+  "real_stdio": {
+    "tools": 20,
+    "resources": 39,
+    "templates": 5,
+    "prompts": 5
+  },
+  "stdout_protocol": {
+    "exit_code": 0,
+    "nonempty_lines": 1,
+    "all_jsonrpc": true,
+    "responses": [
+      {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "experimental": {},
+            "logging": {},
+            "prompts": {
+              "listChanged": false
+            },
+            "resources": {
+              "subscribe": false,
+              "listChanged": false
+            },
+            "tools": {
+              "listChanged": true
+            },
+            "extensions": {
+              "io.modelcontextprotocol/ui": {}
+            }
+          },
+          "serverInfo": {
+            "name": "learn-mcp-server",
+            "version": "3.3.1"
+          }
+        }
+      }
+    ]
+  },
+  "real_http": {
+    "tools": 20,
+    "resources": 39,
+    "templates": 5,
+    "prompts": 5
+  },
+  "http_header_probes": {
+    "ordinary": {
+      "status_code": 200,
+      "body_prefix": "event: message\r\ndata: {\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"protocolVersion\":\"2025-11-25\",\"capabilities\":{\"experimental\":{},\"logging\":{},\"prompts\":{\"listChanged\":true},\"resources\":{\"subscribe\":false,\"listChanged\":true},\"tools\":{\"listChanged\":true},\"extensions\":{\"io.modelcontextprotocol/ui\":{}}},\"serverInfo\":{\"name\":\"learn-mcp-server\",\"version\":\"3.3.1\"}}}\r\n\r\n"
+    },
+    "foreign_origin": {
+      "status_code": 200,
+      "body_prefix": "event: message\r\ndata: {\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"protocolVersion\":\"2025-11-25\",\"capabilities\":{\"experimental\":{},\"logging\":{},\"prompts\":{\"listChanged\":true},\"resources\":{\"subscribe\":false,\"listChanged\":true},\"tools\":{\"listChanged\":true},\"extensions\":{\"io.modelcontextprotocol/ui\":{}}},\"serverInfo\":{\"name\":\"learn-mcp-server\",\"version\":\"3.3.1\"}}}\r\n\r\n"
+    },
+    "foreign_host": {
+      "status_code": 502,
+      "body_prefix": ""
+    },
+    "foreign_both": {
+      "status_code": 502,
+      "body_prefix": ""
+    }
+  },
+  "template_dispatch_case_variants": {
+    "count": 43,
+    "passed": true,
+    "method": "Uppercase URI path values avoid matching exact lowercase static resource routes and exercise normalization in each template."
+  }
+}

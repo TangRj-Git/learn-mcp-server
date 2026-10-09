@@ -2,26 +2,32 @@ import json
 
 import pytest
 
-from learn_mcp_server.server import (
-    compare_concepts,
+from learn_mcp_server.tools.basic_tools import (
+    get_learning_path,
+    get_server_info,
+    list_learning_modules,
+)
+from learn_mcp_server.tools.concept_tools import compare_concepts, explain_concept, get_concept_map
+from learn_mcp_server.tools.config_tools import (
     compare_local_and_remote_config,
-    check_answer,
-    diagnose_issue,
-    explain_concept,
-    explain_code_example,
     explain_config,
-    explain_error_message,
-    generate_learning_plan,
     generate_http_config,
     generate_stdio_config,
-    get_code_example,
-    get_concept_map,
-    get_learning_path,
-    get_practice_task,
-    get_server_info,
-    list_code_examples,
-    list_learning_modules,
+)
+from learn_mcp_server.tools.debug_tools import (
+    diagnose_issue,
+    explain_error_message,
     list_common_errors,
+)
+from learn_mcp_server.tools.example_tools import (
+    explain_code_example,
+    get_code_example,
+    list_code_examples,
+)
+from learn_mcp_server.tools.practice_tools import (
+    check_answer,
+    generate_learning_plan,
+    get_practice_task,
     suggest_next_step,
 )
 
@@ -185,12 +191,15 @@ def test_get_practice_task_returns_advanced_topic_tasks():
 def test_check_answer_gives_feedback_for_relevant_answer():
     result = check_answer("tool", "Tool 使用 @mcp.tool 注册，适合执行动作。")
 
-    assert "答得不错" in result
+    assert "不是语义判卷" in result
+    assert "请核对实际含义" in result
     assert "Tool" in result
 
 
 def test_explain_config_detects_stdio_config():
-    result = explain_config('{"mcpServers": {"learn": {"command": "python", "args": ["server.py"]}}}')
+    result = explain_config(
+        '{"mcpServers": {"learn": {"command": "python", "args": ["server.py"]}}}'
+    )
 
     assert "stdio" in result
     assert "command" in result
@@ -284,6 +293,6 @@ def test_explain_error_message_classifies_common_error():
 def test_list_common_errors_contains_known_errors():
     result = list_common_errors()
 
-    assert "用户机器没有安装 uv" in result
+    assert "启动命令" in result
     assert "uvx" in result
     assert "Resource URI 写错" in result

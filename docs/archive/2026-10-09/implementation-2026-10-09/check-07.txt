@@ -1,0 +1,43 @@
+{
+  "transport": "in-memory",
+  "tools": [
+    "divide",
+    "count_steps"
+  ],
+  "resources": 1,
+  "resource_templates": [
+    "demo://topics/{name}{?detail}"
+  ],
+  "prompts": [
+    "explain_topic",
+    "study_plan"
+  ],
+  "tool_data": {
+    "value": 3.0
+  },
+  "resource_mime": "application/json",
+  "template_mime": "text/markdown",
+  "prompt_roles": [
+    "user",
+    "assistant"
+  ],
+  "progress": [
+    {
+      "progress": 1.0,
+      "total": 3.0,
+      "message": null
+    },
+    {
+      "progress": 2.0,
+      "total": 3.0,
+      "message": null
+    },
+    {
+      "progress": 3.0,
+      "total": 3.0,
+      "message": null
+    }
+  ]
+}
+
+[10/09/26 10:13:00] Error calling tool 'divide'                                

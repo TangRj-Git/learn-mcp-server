@@ -1,24 +1,13 @@
-"""
-这两个函数是简单的字符串格式化工具：
-它们帮助 MCP Server 以一致且美观的方式呈现列表数据，提升用户体验！
-"""
+"""教材主题列表的单行与 Markdown 格式。"""
 
 
 def format_available_items(items: list[str]) -> str:
-    """
-    紧凑的单行格式，适合简短列举
-    :param items:
-    :return:
-    """
+    """用逗号连接简短的主题名称。"""
     return ", ".join(items)
 
 
 def format_markdown_list(items: list[str]) -> str:
-    """
-    清晰的多行格式，适合文档展示
-    :param items:
-    :return:
-    """
+    """每个主题输出一行 Markdown 列表项。"""
     return "\n".join(f"- {item}" for item in items)
 
 

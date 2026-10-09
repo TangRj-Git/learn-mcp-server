@@ -1,0 +1,7 @@
+$ uv pip check
+FASTMCP_MCP_CAMELCASE_COMPAT=false
+
+Checked 78 packages in 2ms
+All installed packages are compatible
+
+exit_code=0

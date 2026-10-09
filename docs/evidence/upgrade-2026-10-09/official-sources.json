@@ -1,0 +1,599 @@
+[
+  {
+    "url": "https://gofastmcp.com/clients/client",
+    "requested_markdown_url": "https://gofastmcp.com/clients/client.md",
+    "topics": [
+      "client"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:22.979747+00:00",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/clients/client.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "085c5f8f8b8c319a37c5f3477ab3f44cc0499c67d80e45ed570bcc8addd05cbe",
+    "bytes": 22649,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# The FastMCP Client\n\n> Programmatic client for interacting with MCP servers through a well-typed, Pythonic interface.\n\nexport const VersionBadge = ({version}) => {\n  return "
+  },
+  {
+    "url": "https://gofastmcp.com/clients/tools",
+    "requested_markdown_url": "https://gofastmcp.com/clients/tools.md",
+    "topics": [
+      "structured-output"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:22.980746+00:00",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/clients/tools.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "9c3bc7140c167410397e2f86a37f8f7ca24fd9345cc1119cfc77ed64bed06cf9",
+    "bytes": 7901,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Calling Tools\n\n> Execute server-side tools and handle structured results.\n\nexport const VersionBadge = ({version}) => {\n  return <Badge stroke size=\"lg\" icon=\"gift\" iconTyp"
+  },
+  {
+    "url": "https://gofastmcp.com/clients/transports",
+    "requested_markdown_url": "https://gofastmcp.com/clients/transports.md",
+    "topics": [],
+    "checked_at_utc": "2026-10-09T02:37:22.980746+00:00",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/clients/transports.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "ebe08fb2233cf6b0ac79d073cbabb7538640ce1f36c173451b202286c564e2fe",
+    "bytes": 10219,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Client Transports\n\n> Configure how clients connect to and communicate with MCP servers.\n\nexport const VersionBadge = ({version}) => {\n  return <Badge stroke size=\"lg\" icon="
+  },
+  {
+    "url": "https://gofastmcp.com/getting-started/upgrading/from-fastmcp-3",
+    "requested_markdown_url": "https://gofastmcp.com/getting-started/upgrading/from-fastmcp-3.md",
+    "topics": [],
+    "checked_at_utc": "2026-10-09T02:37:22.981746+00:00",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/getting-started/upgrading/from-fastmcp-3.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "c39b2b884d2e0d612de7822e9aff6cd69410a93ce7c9b9737a8194842733093f",
+    "bytes": 45286,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Upgrading from FastMCP 3\n\n> What changes when you upgrade to FastMCP 4, which builds on the MCP Python SDK v2\n\nFastMCP 4 builds on the MCP Python SDK v2, and that is the so"
+  },
+  {
+    "url": "https://gofastmcp.com/integrations/mcp-json-configuration",
+    "requested_markdown_url": "https://gofastmcp.com/integrations/mcp-json-configuration.md",
+    "topics": [
+      "config"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:22.981746+00:00",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/integrations/mcp-json-configuration.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "65ba530c17bad740df37a211daca0296bff1ff71653ec049d3653fec9f1ef60f",
+    "bytes": 14498,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# MCP JSON Configuration 🤝 FastMCP\n\n> Generate standard MCP configuration files for any compatible client\n\nexport const VersionBadge = ({version}) => {\n  return <Badge stroke"
+  },
+  {
+    "url": "https://gofastmcp.com/servers/context",
+    "requested_markdown_url": "https://gofastmcp.com/servers/context.md",
+    "topics": [
+      "context"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:22.981746+00:00",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/servers/context.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "7061fe182ba58bcf2c480f3d780a2135f2a2443e86437cebf0e86bd282665c01",
+    "bytes": 19467,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# MCP Context\n\n> Access MCP capabilities like logging, progress, and resources within your MCP objects.\n\nexport const VersionBadge = ({version}) => {\n  return <Badge stroke s"
+  },
+  {
+    "url": "https://gofastmcp.com/servers/progress",
+    "requested_markdown_url": "https://gofastmcp.com/servers/progress.md",
+    "topics": [
+      "progress"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:24.173251+00:00",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/servers/progress.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "8a94311bd745decbe8f73f75d2ffab25e4fc8b21de8b2e58ed602bc2eb05e65c",
+    "bytes": 2614,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Progress Reporting\n\n> Update clients on the progress of long-running operations through the MCP context.\n\nexport const VersionBadge = ({version}) => {\n  return <Badge strok"
+  },
+  {
+    "url": "https://gofastmcp.com/servers/prompts",
+    "requested_markdown_url": "https://gofastmcp.com/servers/prompts.md",
+    "topics": [],
+    "checked_at_utc": "2026-10-09T02:37:24.256515+00:00",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/servers/prompts.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "8f133a2de2373765b2d3949d555a476de4c5c524d1cb3dd7ecf0d1bff7cc127d",
+    "bytes": 21030,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Prompts\n\n> Create reusable, parameterized prompt templates for MCP clients.\n\nexport const VersionBadge = ({version}) => {\n  return <Badge stroke size=\"lg\" icon=\"gift\" iconT"
+  },
+  {
+    "url": "https://gofastmcp.com/servers/resources",
+    "requested_markdown_url": "https://gofastmcp.com/servers/resources.md",
+    "topics": [
+      "resource-template"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:24.256515+00:00",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/servers/resources.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "815f100ee47262fca9f028c1b315329c46914df0e06bbd9ebda97886a086c5f7",
+    "bytes": 37845,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Resources & Templates\n\n> Expose data sources and dynamic content generators to your MCP client.\n\nexport const VersionBadge = ({version}) => {\n  return <Badge stroke size=\"l"
+  },
+  {
+    "url": "https://gofastmcp.com/servers/server",
+    "requested_markdown_url": "https://gofastmcp.com/servers/server.md",
+    "topics": [
+      "server"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:24.445055+00:00",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/servers/server.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "db9cb51ccbd732b92a725a448469b9a6867ad72396dcd22909a86346958ffdf3",
+    "bytes": 14835,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# The FastMCP Server\n\n> The core FastMCP server class for building MCP applications\n\nexport const VersionBadge = ({version}) => {\n  return <Badge stroke size=\"lg\" icon=\"gift\""
+  },
+  {
+    "url": "https://gofastmcp.com/servers/testing",
+    "requested_markdown_url": "https://gofastmcp.com/servers/testing.md",
+    "topics": [
+      "tests"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:24.469770+00:00",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/servers/testing.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "0206aa8a19bee19ba7960fd68d07a9d99f7512bfa6703cdff60eb76fa7b0917e",
+    "bytes": 4067,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Testing your FastMCP Server\n\n> How to test your FastMCP server.\n\nThe best way to ensure a reliable and maintainable FastMCP Server is to test it! The FastMCP Client combine"
+  },
+  {
+    "url": "https://gofastmcp.com/servers/tools",
+    "requested_markdown_url": "https://gofastmcp.com/servers/tools.md",
+    "topics": [
+      "schema"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:24.577869+00:00",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/servers/tools.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "ee492e3daf2b030e5b4eb797588c9dfe8b0350d653ef8611309df668201cb184",
+    "bytes": 51516,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Tools\n\n> Expose functions as executable capabilities for your MCP client.\n\nexport const VersionBadge = ({version}) => {\n  return <Badge stroke size=\"lg\" icon=\"gift\" iconTyp"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
+    "requested_markdown_url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture.md",
+    "topics": [
+      "host"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:24.996663+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "c35ae31222f730ce87adf9344172f8406c51021a34e8c248269fa50fe5e34ae1",
+    "bytes": 32772,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Architecture overview\n\nThis overview of the Model Context Protocol (MCP) discusses its [scope](#scope) and [core concepts](#concepts-of-mcp), and provides an [exa"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector",
+    "requested_markdown_url": "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector.md",
+    "topics": [
+      "debug"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:25.195831+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "c388ead280f0c3474eb0b5b513a320a58813847e8e6d705ab54d3b3bd90dd487",
+    "bytes": 8044,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# MCP Inspector\n\n> Interactive developer tooling for testing and debugging MCP servers, in the browser, on the command line, and in the terminal\n\nThe [MCP Inspector"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/local-server-security",
+    "requested_markdown_url": "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/local-server-security.md",
+    "topics": [
+      "security"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:25.220316+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/local-server-security.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "e45a2b3e6b8d8df3eee6e1993ead5af8fff97de64250d0f1c80270846774ace2",
+    "bytes": 22532,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Local Server Security\n\n> Practical defaults for running MCP servers safely on your own machine.\n\nMost MCP security documentation covers the protocol threat model:"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/extensions/apps/overview",
+    "requested_markdown_url": "https://modelcontextprotocol.io/extensions/apps/overview.md",
+    "topics": [
+      "apps"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:25.506622+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/extensions/apps/overview.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "ebae6e6d71c0561230261caf3b84a7493bd55beae704593accc6e1bceedb0e39",
+    "bytes": 12907,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# MCP Apps\n\n> Interactive UI applications that render inside MCP hosts like Claude Desktop\n\n<Tip>\n  For comprehensive API documentation, advanced patterns, and the "
+  },
+  {
+    "url": "https://modelcontextprotocol.io/extensions/overview",
+    "requested_markdown_url": "https://modelcontextprotocol.io/extensions/overview.md",
+    "topics": [
+      "extensions"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:25.690280+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/extensions/overview.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "37ecd3ab5cf9efadbf90d904424b69e30356b5a3b1b7af10e0c6ab174d8893f4",
+    "bytes": 8758,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Extensions Overview\n\n> Optional extensions to the Model Context Protocol\n\n# MCP Extensions\n\nMCP extensions are optional additions to the specification that define"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/extensions/skills/overview",
+    "requested_markdown_url": "https://modelcontextprotocol.io/extensions/skills/overview.md",
+    "topics": [
+      "skills"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:25.715502+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/extensions/skills/overview.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "a8a6c560a15bdb95c82531508a5f7839e0b235b58682d7ffab34b37b239bef64",
+    "bytes": 15703,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Skills\n\n> Discover and read Agent Skills from MCP servers\n\nThe [ext-skills repository](https://github.com/modelcontextprotocol/ext-skills)\ncontains the published "
+  },
+  {
+    "url": "https://modelcontextprotocol.io/extensions/tasks/overview",
+    "requested_markdown_url": "https://modelcontextprotocol.io/extensions/tasks/overview.md",
+    "topics": [
+      "tasks"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:26.073767+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/extensions/tasks/overview.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "0e564a883ef11b1b5dfe42933caec982471f09f078ff33297e888da32dcdedc3",
+    "bytes": 9967,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Tasks\n\n> Asynchronous task execution for long-running MCP operations\n\nThe [ext-tasks repository](https://github.com/modelcontextprotocol/ext-tasks) contains the f"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization/index",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization/index.md",
+    "topics": [
+      "authorization"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:26.181798+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization/index.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "93fd383906873fedb80119a636b342e25b166ed3f9bee4fa8ae1b3bcb4c2b8f7",
+    "bytes": 25173,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Authorization\n\n<div id=\"enable-section-numbers\" />\n\n## Introduction\n\n### Purpose and Scope\n\nThe Model Context Protocol provides authorization capabilities at the "
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/index",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/index.md",
+    "topics": [
+      "json-rpc",
+      "notification"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:26.208640+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/index.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "67a62de95bdc816ff96e8d5c69b0fc19237191f42805846e2ec8f8d7063e123e",
+    "bytes": 24001,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Overview\n\n<div id=\"enable-section-numbers\" />\n\nThe Model Context Protocol consists of several key components that work together:\n\n* **Base Protocol**: Core JSON-R"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/cancellation",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/cancellation.md",
+    "topics": [
+      "cancellation"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:26.256374+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/cancellation.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "5ad380cae6ee6f29f63210694de90400c2aa84efaddc1c8f3f286ea3a36664a3",
+    "bytes": 4627,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Cancellation\n\n<div id=\"enable-section-numbers\" />\n\nThe Model Context Protocol (MCP) supports optional cancellation of in-progress requests\nthrough notification me"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/mrtr",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/mrtr.md",
+    "topics": [
+      "mrtr"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:26.854223+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/mrtr.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "cfbb4bf592fd0678d9b7e3fdeb5ebc3156c106146e583f55851b3a3c026dc6c9",
+    "bytes": 13364,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Multi Round-Trip Requests\n\n<div id=\"enable-section-numbers\" />\n\n<Note>\n  Multi Round-Trip Requests (MRTR) was introduced in this version of the MCP\n  specificatio"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions.md",
+    "topics": [
+      "subscriptions"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:26.876358+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "278c5255b88895a7ac96f4a59e2ac839f0547e16e39f97978fae0a05367deb1d",
+    "bytes": 6134,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Subscriptions\n\n<div id=\"enable-section-numbers\" />\n\n`subscriptions/listen` opens a long-lived notification stream from the server to the\nclient. Unlike one-off re"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/index",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/index.md",
+    "topics": [
+      "transport"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:27.067130+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/index.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "9d541c583a2769feb38298bba7d19c6d5897b4b6ea329c49da88a436c724dd8c",
+    "bytes": 4232,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Overview\n\n<div id=\"enable-section-numbers\" />\n\nThis page defines what a transport must provide to carry MCP messages, the\nstandard transport bindings, and the req"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio.md",
+    "topics": [
+      "stdio"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:27.098337+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "a021917cb77ecd936143aced4fd243e12dd7b5f9a9344546742df97a381277f5",
+    "bytes": 7352,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# stdio\n\n<div id=\"enable-section-numbers\" />\n\nIn the **stdio** transport, the client launches the MCP server as a subprocess.\nThe two ends communicate over the subp"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http.md",
+    "topics": [
+      "streamable-http",
+      "sse"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:27.170209+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "93daa4bb4e189f0bd51d866950b3b8a3b4e7d0b1e0e6eede5ba1998641d0b955",
+    "bytes": 30407,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Streamable HTTP\n\n<div id=\"enable-section-numbers\" />\n\n<Info>\n  Streamable HTTP was introduced in protocol version 2025-03-26 as a replacement\n  for the [HTTP+SSE "
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning.md",
+    "topics": [
+      "lifecycle",
+      "capability-negotiation"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:27.413194+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "43b48c19cbc330410beed44da8cf441e100a05652a3654f39eb331bb94f46402",
+    "bytes": 8410,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Versioning and Compatibility\n\n<div id=\"enable-section-numbers\" />\n\nThis page defines how a client and server agree on what they are speaking:\nthe protocol version"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog.md",
+    "topics": [
+      "latest-protocol"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:27.605750+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "203d3c9974e1a0e22308a4f0ae55e6ff7f1ad4150de64411b8c8e03003589aae",
+    "bytes": 11892,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Key Changes\n\n<div id=\"enable-section-numbers\" />\n\nThis document lists changes made to the Model Context Protocol (MCP) specification since\nthe previous revision, "
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation.md",
+    "topics": [
+      "elicitation"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:27.635356+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "3817dae8dc076ac675442f9a209e629fa78b2655e00d3695ca21b3a9e8eb5633",
+    "bytes": 28215,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Elicitation\n\n<div id=\"enable-section-numbers\" />\n\nThe Model Context Protocol (MCP) provides a standardized way for servers to request additional\ninformation from "
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/client/roots",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/client/roots.md",
+    "topics": [
+      "roots"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:27.875469+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/client/roots.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "eb7641345727acbb6f4cc5ccac071553062c1ae4a559c3eedf44d56809744dd4",
+    "bytes": 4718,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Roots\n\n<div id=\"enable-section-numbers\" />\n\n<Warning>\n  **Deprecated**: The Roots feature is deprecated as of protocol version\n  `2026-07-28`\n  ([SEP-2577](https:"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/client/sampling",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/client/sampling.md",
+    "topics": [
+      "sampling"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:28.182776+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/client/sampling.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "b7207c57ba18190af66e6df7a02b40f1dc331791b193129c457d83d91d74343a",
+    "bytes": 22225,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Sampling\n\n<div id=\"enable-section-numbers\" />\n\n<Warning>\n  **Deprecated**: The Sampling feature is deprecated as of protocol version\n  `2026-07-28`\n  ([SEP-2577]("
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/index",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/index.md",
+    "topics": [
+      "mcp"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:28.207022+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/index.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "f8df03767e5cbdd4921ae569d1d69e8da9e455e1629fadf4d0613cd658dd632f",
+    "bytes": 5817,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Specification\n\n<div id=\"enable-section-numbers\" />\n\n[Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open protocol that\nenables seamless inte"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/schema",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/schema.md",
+    "topics": [],
+    "checked_at_utc": "2026-10-09T02:37:28.281173+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/schema.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "c877bcbc6a26793d48a0c20cb3e7d4ef1cbb2d41cb194b3b73127ac561809bc3",
+    "bytes": 701659,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Schema Reference\n\n<div id=\"schema-reference\" />\n\n## JSON-RPC\n\n<div class=\"type\">\n  ### `JSONRPCErrorResponse`\n\n  <div class=\"tsd-signature\"><span class=\"tsd-signa"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/discover",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/discover.md",
+    "topics": [
+      "discovery"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:28.615257+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/discover.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "331489cd2984399cfe4828357fdd5a23e062ef40f69f4815499b055b51e2b82c",
+    "bytes": 3835,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Discovery\n\n<div id=\"enable-section-numbers\" />\n\n`server/discover` lets a client query a server's supported protocol versions,\ncapabilities, and identity before se"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/prompts",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/prompts.md",
+    "topics": [
+      "prompt"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:28.721523+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/prompts.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "a73afd2caa6c737eba1508c87e41ffa8a8348d01f4942f416ffe52174a89070e",
+    "bytes": 10037,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Prompts\n\n<div id=\"enable-section-numbers\" />\n\nThe Model Context Protocol (MCP) provides a standardized way for servers to expose prompt\ntemplates to clients. Prom"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/resources",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/resources.md",
+    "topics": [
+      "resource"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:28.776597+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/resources.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "a53726a366fe96d8fe628694e45f5de3a252c2b7206193c8be355a97378e17d5",
+    "bytes": 13546,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Resources\n\n<div id=\"enable-section-numbers\" />\n\nThe Model Context Protocol (MCP) provides a standardized way for servers to expose\nresources to clients. Resources"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools.md",
+    "topics": [
+      "tool",
+      "errors"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:29.061737+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "09be49a064940ef288b47f8df09e95e6e3dc087c3f94e466acd60ec66dff25c3",
+    "bytes": 24314,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Tools\n\n<div id=\"enable-section-numbers\" />\n\nThe Model Context Protocol (MCP) allows servers to expose tools that can be invoked by\nlanguage models. Tools enable m"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/caching",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/caching.md",
+    "topics": [
+      "caching"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:29.142299+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/caching.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "a7167674f44a8e0fafdb4ccfd0e625076313f99a2441909510026ed352d54c09",
+    "bytes": 8489,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Caching\n\n<div id=\"enable-section-numbers\" />\n\nThe Model Context Protocol (MCP) supports caching for some results. This allows clients to cache responses and reduc"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/completion",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/completion.md",
+    "topics": [
+      "completion"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:29.544301+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/completion.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "29b5181e3a0681f1f05b048fb858fa2f9bd0928a3d5572529e19503461b22a15",
+    "bytes": 5390,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Completion\n\n<div id=\"enable-section-numbers\" />\n\nThe Model Context Protocol (MCP) provides a standardized way for servers to offer\nautocompletion suggestions for "
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/logging",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/logging.md",
+    "topics": [
+      "logging"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:29.682432+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/logging.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "b3e82a6b068cd3b130a2c0b140114c924daa0aaaa3ff11033bee05bea92c0705",
+    "bytes": 4464,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Logging\n\n<div id=\"enable-section-numbers\" />\n\n<Warning>\n  **Deprecated**: The Logging feature is deprecated as of protocol version\n  `2026-07-28`\n  ([SEP-2577](ht"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/pagination",
+    "requested_markdown_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/pagination.md",
+    "topics": [
+      "pagination"
+    ],
+    "checked_at_utc": "2026-10-09T02:37:29.730130+00:00",
+    "status": 200,
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/pagination.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "38e266b78191c0ffdcc00cde80bcb87b6ac0dfb1afd477e4fdcc6baf74e1fc96",
+    "bytes": 3206,
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Pagination\n\n<div id=\"enable-section-numbers\" />\n\nThe Model Context Protocol (MCP) supports paginating list operations that may return\nlarge result sets. Paginatio"
+  },
+  {
+    "url": "https://gofastmcp.com/apps/overview",
+    "requested_markdown_url": "https://gofastmcp.com/apps/overview.md",
+    "status": 200,
+    "resolved_url": "https://gofastmcp.com/apps/overview.md",
+    "topics": [
+      "apps-framework-defaults"
+    ],
+    "checked_at_utc": "2026-10-09T02:56:19.477811+00:00",
+    "bytes": 5618,
+    "sha256": "1317d791d14976e41378d469ee568a41bad1ed3ee5ff005d8d99566fa9e5d929",
+    "title_excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://gofastmcp.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Apps\n\n> Give your tools interactive UIs rendered directly in the conversation.\n\nexport const PrefabDemoFrame = ({demo, height, title}) => {\n  const [blobUrl, setBlobUrl] = "
+  }
+]

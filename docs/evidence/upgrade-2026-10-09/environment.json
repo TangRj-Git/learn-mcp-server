@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-09",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "workspace_python": "3.10.18",
+  "versions": {
+    "fastmcp": "4.1.0",
+    "fastmcp-slim": "4.1.0",
+    "mcp": "2.3.0",
+    "mcp-types": "2.3.0",
+    "httpx2": "2.13.1",
+    "starlette": "1.7.0",
+    "pytest": "9.1.1",
+    "ruff": "0.16.10"
+  },
+  "wheel_environment": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\learn-mcp-v4-final-wheel-1fdj7hk2\\environment",
+  "wheel": "E:\\SoftwareProject\\learn-mcp-server\\dist\\learn_mcp_server-0.1.0-py3-none-any.whl",
+  "compatibility_bridge_enabled": false,
+  "wheel_sha256": "a5836e68a7f1781e640602322c7624b3fe9ef4da98e4fa3633a5402c90617b89",
+  "sdist": "E:\\SoftwareProject\\learn-mcp-server\\dist\\learn_mcp_server-0.1.0.tar.gz",
+  "sdist_sha256": "c1aba2bd08501bfb2d8cdce3e727fdf0970d0c0f2ad51b4064f9c4f5fe40e9bc",
+  "sdist_files": 113
+}

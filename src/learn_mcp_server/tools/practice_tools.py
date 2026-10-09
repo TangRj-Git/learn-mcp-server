@@ -1,141 +1,88 @@
+from typing import Literal
+
+from learn_mcp_server.data.concepts import CONCEPTS
+from learn_mcp_server.data.curriculum import LEARNING_LEVELS, LEARNING_PLANS, LEARNING_SEQUENCE
 from learn_mcp_server.data.practices import PRACTICE_TASKS
-from learn_mcp_server.utils import format_available_items, normalize_key, require_not_blank
+from learn_mcp_server.utils import (
+    format_available_items,
+    normalize_key,
+    require_choice,
+    require_not_blank,
+)
 
 
-def generate_learning_plan(level: str) -> str:
-    """
-    根据学习水平生成 MCP 学习计划。
-    """
-    normalized_level = normalize_key(require_not_blank(level, "level"))
-
-    title = {
-        "beginner": "MCP 入门学习计划",
-        "intermediate": "MCP 进阶学习计划",
-        "advanced": "MCP 高级学习计划",
-    }.get(normalized_level, "MCP 入门学习计划")
-
-    return f"""
-# {title}
-
-第 1 天：理解 Host、Client、Server 的关系。
-第 2 天：实现并调用第一个 Tool。
-第 3 天：实现静态 Resource，并理解 Resource 和 Tool 的区别。
-第 4 天：实现 Resource Template，学习 URI 参数映射。
-第 5 天：实现 Prompt，封装可复用任务模板。
-第 6 天：使用 Inspector 查看 Tools、Resources、Prompts。
-第 7 天：整理测试、配置和常见错误排查方式。
-"""
+def generate_learning_plan(level: Literal["beginner", "intermediate", "advanced"]) -> str:
+    """返回对应等级的目标、练习和验收；未知等级不静默替换。"""
+    return LEARNING_PLANS[require_choice(level, "level", LEARNING_LEVELS)]
 
 
 def get_practice_task(topic: str) -> str:
-    """
-    根据主题生成 MCP 练习任务。
-    """
-    normalized_topic = normalize_key(require_not_blank(topic, "topic"))
-
-    if normalized_topic not in PRACTICE_TASKS:
-        available_topics = format_available_items(list(PRACTICE_TASKS.keys()))
-        return f"没有找到练习主题：{topic}\n\n当前支持的练习主题包括：\n\n{available_topics}"
-
-    practice = PRACTICE_TASKS[normalized_topic]
-    return f"""
-# {practice["title"]}
-
-任务：
-
-{practice["task"]}
-
-完成标准：
-
-1. 函数有清晰的类型注解
-2. 函数有 docstring
-3. 返回内容可以被 MCP Host 理解
-4. 有对应测试覆盖核心行为
-"""
+    """读取某个主题的练习和专属验收标准，不执行代码。"""
+    key = normalize_key(require_not_blank(topic, "topic"))
+    if key not in PRACTICE_TASKS:
+        return f"没有找到练习主题：{topic}\n\n当前支持的练习主题包括：\n\n{format_available_items(list(PRACTICE_TASKS))}"
+    practice = PRACTICE_TASKS[key]
+    checks = "\n".join(f"{index}. {check}" for index, check in enumerate(practice["checks"], 1))
+    return f"# {practice['title']}\n\n任务：\n\n{practice['task']}\n\n完成标准：\n\n{checks}\n\n关键词自查不能代替实际运行和语义审阅。"
 
 
 def check_answer(topic: str, answer: str) -> str:
-    """
-    根据主题和用户回答给出学习反馈。
-    """
-    normalized_topic = normalize_key(require_not_blank(topic, "topic"))
+    """关键词辅助自查：列出覆盖与遗漏，不能判断回答是否正确。"""
+    key = normalize_key(require_not_blank(topic, "topic"))
     normalized_answer = normalize_key(require_not_blank(answer, "answer"))
-
-    practice = PRACTICE_TASKS.get(normalized_topic)
+    practice = PRACTICE_TASKS.get(key)
     if practice is None:
-        available_topics = format_available_items(list(PRACTICE_TASKS.keys()))
-        return f"暂时不能检查主题：{topic}\n\n当前支持的主题包括：\n\n{available_topics}"
-
-    matched_keywords = [
-        keyword for keyword in practice["keywords"]
-        if keyword.lower() in normalized_answer
+        return f"暂时不能检查主题：{topic}\n\n当前支持的主题包括：\n\n{format_available_items(list(PRACTICE_TASKS))}"
+    lines = [
+        "# 答案反馈：关键词辅助自查",
+        "",
+        f"主题：{practice['title']}",
+        "",
+        "这不是语义判卷。命中关键词不能证明观点正确，否定或错误表述也可能命中。",
+        "",
     ]
-
-    if matched_keywords:
-        return f"""
-# 答案反馈
-
-答得不错，你的回答已经覆盖了 {practice["title"]} 的关键点。
-
-命中的关键词：{", ".join(matched_keywords)}
-
-可以继续补充：它适合什么场景、如何注册、Host 如何发现和调用它。
-"""
-
-    return f"""
-# 答案反馈
-
-你的回答还可以继续补充 {practice["title"]} 的核心关键词。
-
-建议至少提到：{", ".join(practice["keywords"])}
-"""
+    for label, keywords in practice["checkpoints"].items():
+        matched = [keyword for keyword in keywords if keyword.lower() in normalized_answer]
+        lines.append(
+            f"- {label}："
+            + (
+                f"检测到关键词 {', '.join(matched)}；请核对实际含义。"
+                if matched
+                else f"尚未检测到；可参考 {', '.join(keywords)}。"
+            )
+        )
+    lines.extend(
+        [
+            "",
+            "下一步：按 get_practice_task 的验收标准运行 Client；需要语义点评时使用 Host 模型审阅，不在 Server 内调用外部模型。",
+        ]
+    )
+    return "\n".join(lines)
 
 
 def suggest_next_step(current_topic: str) -> str:
-    """
-    根据当前学习主题推荐下一步。
-    """
-    normalized_topic = normalize_key(require_not_blank(current_topic, "current_topic"))
+    """沿有效主题序列推荐下一步；完成节点不会返回起点。"""
+    key = normalize_key(require_not_blank(current_topic, "current_topic"))
+    if key not in CONCEPTS:
+        return (
+            f"没有找到主题：{current_topic}\n\n可用主题：{format_available_items(list(CONCEPTS))}"
+        )
+    if key not in LEARNING_SEQUENCE or key == LEARNING_SEQUENCE[-1]:
+        return f"# 下一步学习建议\n\n当前主题：{key}\n\n这一阶段已完成。用完整 Client 综合验证 Tool、Resource、Prompt，再选择 mcp://curriculum/advanced 复习版本与边界。"
+    next_topic = LEARNING_SEQUENCE[LEARNING_SEQUENCE.index(key) + 1]
+    return f"""# 下一步学习建议
 
-    next_steps = {
-        "mcp": ("host", "先理解 Host、Client、Server 三个角色。"),
-        "host": ("client", "继续看 Client 如何代表 Host 与 MCP Server 通信。"),
-        "client": ("server", "继续看 Server 如何暴露能力。"),
-        "server": ("tool", "下一步学习 Tool，因为它是最容易直接调用的能力。"),
-        "tool": ("resource", "学完 Tool 后，继续学习 Resource，区分动作和上下文。"),
-        "resource": ("resource-template", "继续学习 Resource Template，掌握动态 URI。"),
-        "resource-template": ("prompt", "继续学习 Prompt，理解可复用任务模板。"),
-        "prompt": ("transport", "继续学习 stdio 和 streamable-http 传输方式。"),
-        "transport": ("config", "继续学习 Host 配置和本地/远程接入方式。"),
-        "stdio": ("streamable-http", "对比本地 stdio 和 HTTP 运行方式。"),
-        "streamable-http": ("debug", "继续学习 HTTP 服务调试和配置排查。"),
-        "config": ("debug", "继续学习常见错误诊断。"),
-        "debug": ("tests", "最后补测试，确认 MCP 能力真的能被 Client 使用。"),
-    }
-
-    next_topic, reason = next_steps.get(
-        normalized_topic,
-        ("tool", "如果不确定当前进度，建议从 Tool 开始验证 MCP 的可调用能力。"),
-    )
-
-    return f"""
-# 下一步学习建议
-
-当前主题：{normalized_topic}
+当前主题：{key}
 
 推荐下一步：{next_topic}
 
-原因：
-{reason}
-
 建议操作：
-1. 调用 explain_concept("{next_topic}") 查看概念说明。
-2. 如果有示例，调用 get_code_example 或 mcp://examples/{{name}} 查看代码。
-3. 完成一个小练习后，再调用 check_answer 检查理解是否到位。
+1. 调用 explain_concept("{next_topic}")，或读取 mcp://concepts/{next_topic}。
+2. 根据课程查看示例和练习；完成验收后继续。
+3. Resource/Prompt、schema、错误与真实传输均应实际观察。
 
-后续衔接：
-Tool -> Resource -> Resource Template -> Prompt -> Transport -> Config -> Debug
-""".strip()
+后续衔接：{" -> ".join(LEARNING_SEQUENCE)}
+"""
 
 
 __all__ = ["check_answer", "generate_learning_plan", "get_practice_task", "suggest_next_step"]

@@ -1,0 +1,6 @@
+$ uv run --locked ruff format --check src tests examples
+FASTMCP_MCP_CAMELCASE_COMPAT=false
+
+46 files already formatted
+
+exit_code=0

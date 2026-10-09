@@ -1,0 +1,32 @@
+{
+  "fastmcp": "4.1.0",
+  "mcp": "2.3.0",
+  "in_memory": {
+    "protocol_version": "2026-07-28",
+    "server_name": "learn-mcp-server",
+    "server_version": "0.1.0",
+    "capabilities": [
+      20,
+      39,
+      5,
+      5
+    ],
+    "tool_result_nonempty": true
+  },
+  "stdio": {
+    "protocol_version": "2026-07-28",
+    "server_name": "learn-mcp-server",
+    "server_version": "0.1.0",
+    "capabilities": [
+      20,
+      39,
+      5,
+      5
+    ],
+    "tool_result_nonempty": true
+  },
+  "demo_result": {
+    "value": 4.0
+  },
+  "unknown_tool_is_error": true
+}
