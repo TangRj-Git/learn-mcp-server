@@ -10,7 +10,7 @@ def test_stdio_config_is_valid_json():
 
     server = config["mcpServers"]["learn-mcp-server"]
     assert server["command"] == "uvx"
-    assert server["args"] == ["--from", "learn-mcp-server==0.1.0", "learn-mcp-server"]
+    assert server["args"] == ["--from", "learn-mcp-server==0.2.0", "learn-mcp-server"]
 
 
 def test_streamable_http_config_is_valid_json():

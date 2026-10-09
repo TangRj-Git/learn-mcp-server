@@ -243,7 +243,7 @@ HTTP 的两个终端步骤见 [运行与配置](running-and-configuration.md#htt
     "resultType": "complete",
     "supportedVersions": ["2026-07-28"],
     "capabilities": {"tools": {}, "resources": {}, "prompts": {}},
-    "_meta": {"io.modelcontextprotocol/serverInfo": {"name": "learning-demo", "version": "0.1.0"}},
+    "_meta": {"io.modelcontextprotocol/serverInfo": {"name": "learning-demo", "version": "0.2.0"}},
     "ttlMs": 0,
     "cacheScope": "private"
   }

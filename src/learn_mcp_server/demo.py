@@ -13,7 +13,7 @@ from pydantic import Field
 
 mcp = FastMCP(
     "learning-demo",
-    version="0.1.0",
+    version="0.2.0",
     instructions="FastMCP 4.x / SDK 2.x / 协议 2026-07-28 的三原语示例，不调用模型。",
 )
 TOPICS = {
@@ -46,7 +46,7 @@ def divide(
 def demo_metadata() -> str:
     """读取 JSON 元数据；显式序列化，并观察实际 MIME。"""
     return json.dumps(
-        {"version": "0.1.0", "protocol": "2026-07-28", "topics": list(TOPICS)}, ensure_ascii=False
+        {"version": "0.2.0", "protocol": "2026-07-28", "topics": list(TOPICS)}, ensure_ascii=False
     )
 
 

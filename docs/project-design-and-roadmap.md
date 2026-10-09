@@ -6,7 +6,7 @@
 
 `learn-mcp-server` 帮助学习者观察 Tool、Resource、Resource Template、Prompt 的注册、发现、使用和失败行为。主服务是可查询的教材，`demo.py` 是可执行的三原语实验，两者分别创建 FastMCP 实例。
 
-主课程使用 FastMCP 4.1.0、SDK 2.3.0 和 MCP 2026-07-28。旧握手作为历史对照；MRTR 等可选交互专题与实际已验证能力分开说明，详见 [版本说明](protocol-versions.md)。项目版本 0.1.0 与协议日期含义不同。
+主课程使用 FastMCP 4.1.0、SDK 2.3.0 和 MCP 2026-07-28。旧握手作为历史对照；MRTR 等可选交互专题与实际已验证能力分开说明，详见 [版本说明](protocol-versions.md)。项目版本 0.2.0 与协议日期含义不同。
 
 ## 一条清楚的调用链
 

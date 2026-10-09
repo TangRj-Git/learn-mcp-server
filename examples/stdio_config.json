@@ -4,7 +4,7 @@
       "command": "uvx",
       "args": [
         "--from",
-        "learn-mcp-server==0.1.0",
+        "learn-mcp-server==0.2.0",
         "learn-mcp-server"
       ]
     }

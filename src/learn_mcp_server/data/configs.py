@@ -17,7 +17,7 @@ stdio 配置适合本地 MCP Server。Host 会启动一个本地进程，并通�
       "command": "uvx",
       "args": [
         "--from",
-        "learn-mcp-server==0.1.0",
+        "learn-mcp-server==0.2.0",
         "learn-mcp-server"
       ]
     }

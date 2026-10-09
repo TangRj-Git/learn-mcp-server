@@ -6,7 +6,7 @@
 
 | 层次 | 依赖范围 / 锁定版本 | 实际含义 |
 | --- | --- | --- |
-| 项目 | 0.1.0 | 包版本与发现结果中的 Server 版本 |
+| 项目 | 0.2.0 | 包版本与发现结果中的 Server 版本 |
 | Python | >=3.10 / 本地 3.10.18 | FastMCP 4.1.0、SDK 2.3.0 均仍支持 3.10 |
 | FastMCP | >=4.1.0,<5 / 4.1.0 | 2026-10-09 PyPI 查询到的最新稳定版 |
 | MCP Python SDK | >=2.3.0,<3 / 2.3.0 | SDK 2 原生属性与异常 API |
@@ -85,7 +85,7 @@ Roots 只传达相关目录，不会强制文件沙箱。弃用能力最早在 2
 
 前一阶段主环境是 FastMCP 3.4.8 / SDK 1.30.0，158 项测试通过；当时在临时副本进行 4.1.0 实验，发现 SDK 改名与 HTTP 依赖差异。该实验绕过了旧主包依赖范围，不代表当时主环境已迁移。
 
-原始实验仍保留：[收集错误](archive/2026-10-09/implementation-2026-10-09/fastmcp4-original-tests.txt)、[调整后的副本测试](archive/2026-10-09/implementation-2026-10-09/fastmcp4-adapted-tests.txt)、[API 探针](archive/2026-10-09/implementation-2026-10-09/fastmcp4-probe.py)、[探针结果](archive/2026-10-09/implementation-2026-10-09/fastmcp4-probe.json)。[前一阶段验收](archive/2026-10-09/implementation-status-2026-10-09.md) 是历史快照，当前状态以 [检查与升级报告](reports/review-and-upgrade-2026-10-09.md) 为准。
+原始实验仍保留：[收集错误](archive/2026-10-09/implementation-2026-10-09/fastmcp4-original-tests.txt)、[调整后的副本测试](archive/2026-10-09/implementation-2026-10-09/fastmcp4-adapted-tests.txt)、[API 探针](archive/2026-10-09/implementation-2026-10-09/fastmcp4-probe.py)、[探针结果](archive/2026-10-09/implementation-2026-10-09/fastmcp4-probe.json)。[前一阶段验收](archive/2026-10-09/implementation-status-2026-10-09.md) 是历史快照，FastMCP 4 / SDK 2 的迁移验收见 [检查与升级报告](reports/review-and-upgrade-2026-10-09.md)。报告和原始记录中的项目 0.1.0 对应检查阶段，当前项目版本已更新为 0.2.0。
 
 后续维护顺序：查 PyPI 与官方迁移指南 → 更新依赖下限/主版本边界 → 正常生成 lock/sync → 改 API 与教材 → Ruff/弃用警告门禁/行为与真实传输测试 → 正常安装仓库外 wheel → 记录版本、证据和未验证范围。可以在现有简单目录中完成，无需额外 providers、数据库或协议兼容层。
 
