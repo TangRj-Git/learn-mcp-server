@@ -9,7 +9,7 @@
 | [minimal_server.py](minimal_server.py) | 导入并启动包内 demo | stdio/Inspector 入口；完整实现只有一份，在 [demo.py](../src/learn_mcp_server/demo.py) |
 | [workspace_stdio_config.json](workspace_stdio_config.json) | Host 启动当前源码工作区 | 推荐的本地接入方式，无须发布安装包 |
 | [streamable_http_config.json](streamable_http_config.json) | Host 连接本地 HTTP 主服务 | 先启动服务，再按 URL 接入 |
-| [stdio_config.json](stdio_config.json) | Host 通过 uvx 启动已发布包 | 发布后的配置示意，不能代替当前工作区配置 |
+| [stdio_config.json](stdio_config.json) | Host 通过 uvx 启动已发布包 | 使用 PyPI 上的 `0.2.0`；当前工作区接入选 workspace_stdio_config.json |
 
 常用顺序：
 

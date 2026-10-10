@@ -225,7 +225,7 @@ Inspector 连接成功后，查看 Tools、Resources、Resource Templates 和 Pr
 
 ### 发布后给别人使用
 
-对应版本发布到 PyPI 后，可以让 Host 使用 `uvx` 启动。`uvx` 会创建隔离环境并安装依赖，使用者不需要手动指定 Python 解释器路径：
+当前 `0.2.0` 已发布到 [PyPI](https://pypi.org/project/learn-mcp-server/0.2.0/)，可以让 Host 使用 `uvx` 启动。`uvx` 会创建隔离环境并安装依赖，使用者不需要手动指定 Python 解释器路径：
 
 ```json
 {
@@ -426,7 +426,7 @@ dist/learn_mcp_server-0.2.0-py3-none-any.whl
 
 ## 发布后运行
 
-对应版本发布到 PyPI 后，可以直接使用：
+当前已发布的 `0.2.0` 可以直接使用：
 
 ```powershell
 uvx --from learn-mcp-server==0.2.0 learn-mcp-server

@@ -84,7 +84,7 @@ uv run --locked fastmcp dev inspector --no-reload E:/SoftwareProject/learn-mcp-s
 | --- | --- | --- |
 | 当前源码工作区，推荐先使用 | [workspace_stdio_config.json](../examples/workspace_stdio_config.json) | 替换项目绝对路径，确认 Host 能找到 uv |
 | 连接已启动的本地 HTTP 主服务 | [streamable_http_config.json](../examples/streamable_http_config.json) | 按上面步骤先启动服务 |
-| 已发布安装包的 uvx 接入 | [stdio_config.json](../examples/stdio_config.json) | 包发布后才适用；本项目的改造没有发布 PyPI 包 |
+| 已发布安装包的 uvx 接入 | [stdio_config.json](../examples/stdio_config.json) | `0.2.0` 已发布到 [PyPI](https://pypi.org/project/learn-mcp-server/0.2.0/)；确认 Host 能找到 uvx |
 
 这些文件使用生态常见的 `mcpServers` JSON。Host 可能使用 TOML 或专属格式，Resource/Prompt 展示也取决于产品；具体配置查 Host 文档。Python、Node、可执行文件都是有效 stdio command，uv/uvx 是推荐工具。
 
